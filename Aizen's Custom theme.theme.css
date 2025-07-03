@@ -1,0 +1,2024 @@
+/**
+ * @name Aizen's Custom Theme
+ * @author AizenKai
+ * @version 1.1.0
+ * @description A clean, dark Discord theme for easy personal customization. No imports, no light mode, no conflicts.
+ */
+
+/*--- 1. Default Values (Core Variables) ---*/
+:root {
+	--kai-radius-ui: 10px;
+	--kai-radius-avatar: 20%;
+	--kai-radius-server: 20%;
+	--kai-spacing-ui: 10px;
+	--kai-spacing-app: 10px;
+	--kai-icon-avatar-chat: 64px;
+	--kai-icon-avatar-list: 32px;
+	--kai-icon-avatar-profile: 80px;
+	--kai-scrollbar-width: 10px;
+	--kai-channels-width: 240px;
+	--kai-members-width: 240px;
+	--kai-anim-short: .2s;
+	--kai-anim-long: .5s;
+	--kai-anim-button: .25s;
+	--kai-blur-scale: 100;
+  }
+  
+  .theme-dark {
+	/* Accent and background color variables */
+	--kai-accent-color-hue: 320;
+	--kai-accent-color-saturation: 60%;
+	--kai-accent-color-lightness: 31%;
+	--kai-foreground-color-hue-base: 210;
+	--kai-foreground-color-hue-links: 197;
+	--kai-foreground-color-saturation-amount: 1;
+	--kai-foreground-color-lightness-amount: 1;
+	--kai-background-color-hue: 320;
+	--kai-background-color-saturation-amount: 1;
+	--kai-background-color-lightness-amount: 1;
+	--kai-background-color-alpha: 0.8;
+  }
+  
+  /*--- 2 Default Values ---*/
+  :root {
+	  /* Unit: size (e.g. pixels) */
+	  --kai-radius-ui: 10px;
+	  --kai-radius-avatar: 20%;
+	  --kai-radius-server: 20%;
+  
+	  --kai-spacing-ui: 10px;
+	  --kai-spacing-app: 10px;
+  
+	  --kai-icon-avatar-chat: 64px;
+	  --kai-icon-avatar-list: 32px;
+	  --kai-icon-avatar-profile: 80px;
+  
+	  --kai-scrollbar-width: 10px;
+	  --kai-channels-width: 240px;
+	  --kai-members-width: 240px;
+  
+	  /* Unit: seconds */
+	  --kai-anim-short: .2s;
+	  --kai-anim-long: .5s;
+	  --kai-anim-sticky: .2s;
+	  --kai-anim-button: .25s;
+	  --kai-anim-button-appear: .25s;
+  
+	  /* Unit: percent (no symbol) */
+	  --kai-blur-scale: 100;
+  }
+  
+  .theme-dark {
+	  /* accent color is used for things like buttons */
+	  --kai-accent-color-hue: 320; /* hue in HSL */
+	  --kai-accent-color-saturation: 60%; /* saturation in HSL */
+	  --kai-accent-color-lightness: 31%; /* lightness in HSL */
+	  
+	  /* foreground color affects icons, text, and many other things in the UI */
+	  --kai-foreground-color-hue-base: 210; /* based on vanilla --text-normal hue */
+	  --kai-foreground-color-hue-links: 197;
+	  --kai-foreground-color-saturation-amount: 1; /* offset, where 1 is normal strength and 0.5 is -50 percentile, can go above 1 at risk of clipping */
+	  --kai-foreground-color-lightness-amount: 1; /* ditto, 1 is normal and 0.5 is -50 percentile, can go above 1 at risk of clipping */
+	  
+	  /* background color affects the squares that darken the backdrop */
+	  --kai-background-color-hue: 320;
+	  --kai-background-color-saturation-amount: 1;
+	  --kai-background-color-lightness-amount: 1;
+	  --kai-background-color-alpha: 0.8; /* how opaque the backgrounds should be, where 1 is fully opaque and 0 is fully transparent. not recommended to set to 0 unless background is very dark or black */
+  }
+  
+  .theme-light {
+	  /* accent color is used for things like buttons */
+	  --kai-accent-color-hue: 320; /* hue in HSL */
+	  --kai-accent-color-saturation: 60%; /* saturation in HSL */
+	  --kai-accent-color-lightness: 31%; /* lightness in HSL */
+  
+	  /* foreground color affects icons, text, and many other things in the UI */
+	  --kai-foreground-color-hue-base: 210;
+	  --kai-foreground-color-hue-links: 197;
+	  --kai-foreground-color-saturation-amount: 1; /* offset, where 1 is normal strength and 0.5 is -50 percentile, can go above 1 at risk of clipping */
+	  --kai-foreground-color-lightness-amount: 1; /* ditto, 1 is normal and 0.5 is -50 percentile, can go above 1 at risk of clipping */
+	  
+	  --kai-background-color-hue: 320;
+	  --kai-background-color-saturation-amount: 1;
+	  --kai-background-color-lightness-amount: 1;
+	  --kai-background-color-alpha: 0.8; /* how opaque the backgrounds should be, where 1 is fully opaque and 0 is fully transparent. not recommended to set to 0 unless background is very light or white */
+  }
+  
+  /* This marks the end of the default values section. */
+  /* The variables that follow are shorthands used by the developers. */
+  /* Please do not change them, as they are meant to be constants. */
+  
+  .theme-dark {
+	  --kai-background-color-lightness-025: 2.5%;
+	  --kai-background-color-lightness-050: 5.0%;
+	  --kai-background-color-lightness-075: 7.5%;
+	  --kai-background-color-lightness-100: 10.0%;
+	  --kai-background-color-lightness-125: 12.5%;
+	  --kai-background-color-lightness-150: 15.0%;
+	  --kai-background-color-lightness-200: 20.0%;
+	  --kai-background-color-lightness-250: 25.0%;
+	  --kai-background-color-lightness-500: 50.0%;
+  }
+  
+  .theme-light {
+	  --kai-background-color-lightness-025: 97.5%;
+	  --kai-background-color-lightness-050: 95.0%;
+	  --kai-background-color-lightness-075: 92.5%;
+	  --kai-background-color-lightness-100: 90.0%;
+	  --kai-background-color-lightness-125: 87.5%;
+	  --kai-background-color-lightness-150: 85.0%;
+	  --kai-background-color-lightness-200: 80.0%;
+	  --kai-background-color-lightness-250: 75.0%;
+	  --kai-background-color-lightness-500: 50.0%;
+  }
+  
+  .theme-dark, .theme-light {
+	  --kai-accent-ui: hsl(
+	  var(--kai-accent-color-hue),
+	  var(--kai-accent-color-saturation-factor),
+	  calc(var(--kai-accent-color-lightness) * 1)
+	  );
+	  --kai-accent-ui-hover: hsl(
+	  var(--kai-accent-color-hue),
+	  calc(var(--kai-accent-color-saturation-factor) * 1.1),
+	  calc(var(--kai-accent-color-lightness) / 1.5)
+	  );
+	  
+	  --kai-accent-color-saturation-factor: calc(var(--kai-accent-color-saturation) * var(--saturation-factor, 1));
+	  --kai-foreground-color-saturation-factor: calc(var(--kai-foreground-color-saturation-amount, 1) * var(--saturation-factor, 1));
+	  --kai-background-color-saturation-factor: calc(var(--kai-background-color-saturation-amount, 1) * var(--saturation-factor, 1));
+	  
+	  --kai-bgc-ui-base: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-025)), calc(var(--kai-background-color-alpha) * var(--kai-bg-ui-base-alpha-modifier, 100%)));
+	  --kai-bgc-ui-base-hover: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 60%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-050)), calc(var(--kai-background-color-alpha) * (var(--kai-bg-ui-base-alpha-modifier, 100%) + var(--kai-bg-hover-alpha-modifier, 10%))));
+	  
+	  --kai-bgc-ui-card: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * (60% * 1/2)), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-125)), calc(var(--kai-background-color-alpha) * var(--kai-bg-ui-card-alpha-modifier, 100%)));
+	  --kai-bgc-ui-card-hover: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * (75% * 1/2)), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-150)), calc(var(--kai-background-color-alpha) * (var(--kai-bg-ui-card-alpha-modifier, 100%) + var(--kai-bg-hover-alpha-modifier, 10%))));
+	  
+	  --kai-bgc-chatmsg: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-100)), calc(var(--kai-background-color-alpha) * var(--kai-bg-chat-alpha-modifier, 110%)));
+	  --kai-bgc-chatmsg-hover: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 60%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-075)), calc(var(--kai-background-color-alpha) * (var(--kai-bg-chat-alpha-modifier, 110%) + var(--kai-bg-hover-alpha-modifier, 10%))));
+	  
+	  --kai-bgc-popout: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-025)), calc(var(--kai-background-color-alpha) * var(--kai-bg-popout-alpha-modifier, 100%)));
+	  --kai-bgc-button: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 40%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-500)), calc(var(--kai-background-color-alpha) * 115%));
+	  --kai-bgc-button-hover: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 40%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-250)), calc(var(--kai-background-color-alpha) * 115% + var(--kai-bg-hover-alpha-modifier, 10%)));
+	  --kai-bgc-server-button: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-150)), calc(var(--kai-background-color-alpha) / 3 * 2));
+	  --kai-bgc-server-button-hover: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-200)), calc(var(--kai-background-color-alpha) / 5 * 4));
+	  
+	  --kai-bgc-radiobar-hover: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-150)), calc(var(--kai-background-color-alpha) * 100% + var(--kai-bg-hover-alpha-modifier, 10%)));
+	  --kai-bgc-radiobar-selected: hsla(var(--kai-background-color-hue), calc(var(--kai-background-color-saturation-factor) * 50%), calc(var(--kai-background-color-lightness-amount) * var(--kai-background-color-lightness-200)), calc(var(--kai-background-color-alpha) * 80%));	
+  }
+  
+  /* Disable animations for reduce-motion */
+  :root.reduce-motion {
+	  --kai-anim-short: 0s;
+	  --kai-anim-long: 0s;
+	  --kai-anim-sticky: 0s;
+	  --kai-anim-button: 0s;
+	  --kai-anim-button-appear: 0s;
+  }
+  
+  /* Colors */
+  .theme-dark {
+	  /* The variable hell begins */
+	  --header-primary: hsl(
+	  0,
+	  0%,
+	  calc(var(--kai-foreground-color-lightness-amount) * 100%)
+	  );
+	  --header-secondary: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 6),
+	  calc(var(--kai-foreground-color-saturation-factor) * 3.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 73.5%)
+	  );
+	  
+	  --text-normal: hsl(
+	  var(--kai-foreground-color-hue-base),
+	  calc(var(--kai-foreground-color-saturation-factor) * 2.9%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 86.7%)
+	  );
+	  --text-muted: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 4),
+	  calc(var(--kai-foreground-color-saturation-factor) * 4%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 65.3%)
+	  );
+	  
+	  --text-link: hsl(
+	  var(--kai-foreground-color-hue-links),
+	  calc(var(--kai-foreground-color-saturation-factor) * 100%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 47.8%)
+	  );
+	  --text-link-low-saturation: hsl(
+	  var(--kai-foreground-color-hue-links),
+	  calc(var(--kai-foreground-color-saturation-factor) * 100%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 52.9%)
+	  );
+  
+	  --text-positive: hsl(
+	  139,
+	  calc(var(--kai-foreground-color-saturation-factor) * 51.6%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 52.2%)
+	  );
+	  --text-warning: hsl(
+	  38,
+	  calc(var(--kai-foreground-color-saturation-factor) * 95.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 54.1%)
+	  );
+	  --text-danger: hsl(
+	  359,
+	  calc(var(--kai-foreground-color-saturation-factor) * 82%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 73.9%)
+	  );
+	  
+	  --text-brand: hsl(
+	  var(--kai-accent-color-hue),
+	  calc(var(--kai-foreground-color-saturation-factor) * 86.1%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 77.5%)
+	  );
+	  
+	  --interactive-normal: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 6),
+	  calc(var(--kai-foreground-color-saturation-factor) * 3.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 73.5%)
+	  );
+	  --interactive-hover: hsl(
+	  var(--kai-foreground-color-hue-base),
+	  calc(var(--kai-foreground-color-saturation-factor) * 2.9%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 86.7%)
+	  );
+	  --interactive-active: hsl(
+	  0,
+	  calc(var(--kai-foreground-color-saturation-factor) * 0%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 100%)
+	  );
+	  --interactive-muted: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 7),
+	  calc(var(--kai-foreground-color-saturation-factor) * 7.6%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 33.5%)
+	  );
+	  
+	  --channels-default: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 13),
+	  calc(var(--kai-foreground-color-saturation-factor) * 3.4%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 60.2%)
+	  );
+  
+	  --channel-icon: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 3),
+	  calc(var(--kai-foreground-color-saturation-factor) * 4.1%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 57.5%)
+	  );	
+  }
+  
+  .theme-light {
+	  /* The variable hell continues */
+	  --header-primary: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 30),
+	  calc(var(--kai-foreground-color-saturation-factor) * 7.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 2.5%)
+	  );
+	  --header-secondary: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 5),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 34.3%)
+	  );
+	  
+	  --text-normal: hsl(
+	  var(--kai-foreground-color-hue-base),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.8%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 20%)
+	  );
+	  --text-muted: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 3),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.6%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 40.8%)
+	  );
+	  
+	  --text-link: hsl(
+	  calc(var(--kai-foreground-color-hue-links) + 15),
+	  calc(var(--kai-foreground-color-saturation-factor) * 100%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 43.9%)
+	  );
+	  --text-link-low-saturation: hsl(
+	  calc(var(--kai-foreground-color-hue-links) + 15),
+	  calc(var(--kai-foreground-color-saturation-factor) * 100%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 43.9%)
+	  );
+  
+	  --text-positive: hsl(
+	  139,
+	  calc(var(--kai-foreground-color-saturation-factor) * 47.1%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 33.3%)
+	  );
+	  --text-warning: hsl(
+	  38,
+	  calc(var(--kai-foreground-color-saturation-factor) * 81.5%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 31.8%)
+	  );
+	  --text-danger: hsl(
+	  359,
+	  calc(var(--kai-foreground-color-saturation-factor) * 85.6%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 64.7%)
+	  );
+	  
+	  --text-brand: hsl(
+	  var(--kai-accent-color-hue),
+	  calc(var(--kai-foreground-color-saturation-factor) * 85.6%),
+	  calc(var(--kai-foreground-color-lightness-amount) * 64.7%)
+	  );
+	  
+	  --interactive-normal: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 5),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) / 1.5 * 34.3%)
+	  );
+	  --interactive-hover: hsl(
+	  var(--kai-foreground-color-hue-base),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.8%),
+	  calc(var(--kai-foreground-color-lightness-amount) / 1.5 * 20%)
+	  );
+	  --interactive-active: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 30),
+	  calc(var(--kai-foreground-color-saturation-factor) * 7.7%),
+	  calc(var(--kai-foreground-color-lightness-amount) / 1.5 * 2.5%)
+	  );
+	  --interactive-muted: hsl(
+	  var(--kai-foreground-color-hue-base),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.8%),
+	  calc(var(--kai-foreground-color-lightness-amount) / 1.5 * 80%)
+	  );
+	  
+	  --channels-default: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 3),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.6%),
+	  calc(var(--kai-foreground-color-lightness-amount) / 1.5 * 40.8%)
+	  );
+  
+	  --channel-icon: hsl(
+	  calc(var(--kai-foreground-color-hue-base) + 3),
+	  calc(var(--kai-foreground-color-saturation-factor) * 9.4%),
+	  calc(var(--kai-foreground-color-lightness-amount) / 1.5 * 45.9%)
+	  );
+  }
+  
+  .theme-light, .theme-dark, :root {
+	/* There ain't no gettin' off this train, Cloud! */
+	--theme-base-color-amount: calc( var(--kai-background-color-saturation-factor) * 100% ) !important;
+	--theme-base-color-hsl: var(--kai-accent-color-hue) var(--kai-accent-color-saturation) var(--kai-accent-color-lightness) !important;
+	--theme-base-color-dark-hsl: var(--kai-accent-color-hue) var(--kai-accent-color-saturation) var(--kai-accent-color-lightness) !important;
+	--theme-base-color-light-hsl: var(--kai-accent-color-hue) var(--kai-accent-color-saturation) var(--kai-accent-color-lightness) !important;
+	--theme-base-color: hsl(var(--kai-accent-color-hue), var(--kai-accent-color-saturation), var(--kai-accent-color-lightness)) !important;
+	--theme-base-color-dark: hsl(var(--kai-accent-color-hue), var(--kai-accent-color-saturation), var(--kai-accent-color-lightness)) !important;
+	--theme-base-color-light: hsl(var(--kai-accent-color-hue), var(--kai-accent-color-saturation), var(--kai-accent-color-lightness)) !important;
+  }
+  
+  /* Blur */
+  :root {
+	  --kai-blur-ui: 2px;
+	  --kai-blur-popout: 3px;
+	  --blurcalc-popout: blur(calc(var(--kai-blur-popout) / 100 * var(--kai-blur-scale)));
+	  --blurcalc-ui: blur(calc(var(--kai-blur-ui) / 100 * var(--kai-blur-scale)));
+  }
+  
+  /* Placeholder text that should never show up */
+  :root {
+	  --kai-i11n-missingno: "missing text";
+  }
+  
+  /* Discord's variables */
+  .theme-dark, .theme-light {
+	  --background-primary: var(--kai-bgc-popout) !important;
+	  --background-secondary: var(--kai-bgc-ui-base) !important;
+	  --background-secondary-alt: var(--kai-bgc-ui-card) !important;
+	  --background-tertiary: var(--kai-bgc-ui-base) !important;
+	  --channelbodyarea-background: transparent !important;
+	  --background-floating: var(--kai-bgc-popout) !important;
+	  --background-mobile-primary: var(--background-primary);
+	  --background-mobile-secondary: var(--background-secondary);
+	  --radio-group-dot-foreground: white;
+	  --brand-color: var(--brand-experiment);
+	  --brand-color-hover: var(--brand-experiment);
+  
+	  /* get ready for a ton of nearly identical variables. thanks discord devs */
+	  --brand-experiment: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.856),calc(var(--kai-accent-color-lightness)*0.647));
+	  --brand-100: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.778),98.2%);
+	  --brand-130: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.875),96.9%);
+	  --brand-160: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.846),94.9%);
+	  --brand-200: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.833),92.9%);
+	  --brand-230: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.870),91%);
+	  --brand-260: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.862),88.6%);
+	  --brand-300: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.861),85.9%);
+	  --brand-360: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.861),77.5%);
+	  --brand-400: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.861),71.8%);
+	  --brand-430: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.857),69.8%);
+	  --brand-460: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.855),67.5%);
+	  --brand-500: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.856),64.7%);
+	  --brand-500-hsl: var(--kai-accent-color-hue) calc(var(--kai-accent-color-saturation-factor)*0.856) 64.7%;
+	  --brand-530: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.667),58.8%);
+	  --brand-560: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.514),52.4%);
+	  --brand-600: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.467),44.1%);
+	  --brand-630: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.467),38.2%);
+	  --brand-660: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.471),33.3%);
+	  --brand-700: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.470),25.9%);
+	  --brand-730: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.468),24.3%);
+	  --brand-760: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.469),22.2%);
+	  --brand-800: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.475),19.4%);
+	  --brand-830: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.474),14.9%);
+	  --brand-860: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.469),9.6%);
+	  --brand-900: hsl(var(--kai-accent-color-hue),calc(var(--kai-accent-color-saturation-factor)*0.500),3.1%);
+  }
+  
+  .theme-dark {
+	  --bd-blue: var(--kai-accent-ui) !important;
+	  --background-accent: var(--kai-accent-ui);
+  }
+  
+  .theme-light {
+	  --bd-blue: var(--kai-accent-ui) !important;
+	  --background-accent: var(--kai-accent-ui);
+  }
+  
+  /*--- 3 Background ---*/
+  /* Quick and dirty fix for create a new server in dark mode */
+  .theme-dark .layer-1Ixpg3 .theme-light { /* the ones i actually need */
+	  --header-primary: #060607;
+	  --header-secondary: #4f5660;
+	  --text-normal: #2e3338;
+	  --interactive-normal: #4f5660;
+  }
+	  /*-- 3.1 Image --*/
+  #app-mount {
+	  background: var(--kai-main-bg) !important;
+	  background-size: cover !important;
+	  background-position: center !important;
+  }
+  body { background-color: var(--kai-accent-ui); }
+  .appMount__51fd7, .app__160d8, #app-mount .bg__960e4 {background-color: transparent;}
+		  /*- 3.1.1 Transparent Mode / Light Mode Specifics -*/
+  .bd-transparency, .bd-transparency #app-mount {background: transparent !important;}
+  .theme-light .emoji, .theme-light .emoji.jumboable {
+	  filter: drop-shadow(0 0 1px #00000055);
+  }
+  .bd-pfbtn,
+  .bda-settings-button,
+  .wrapper-22ayhK,
+  .rtc-connection-status {
+	  padding-bottom: 2px;
+  }
+  
+			  /*-- 3.2 Margins --*/
+  .layers__160d8 {margin: var(--kai-spacing-app) !important;}
+  .content_c48ade {margin-top: var(--kai-spacing-app) !important;}
+  .standardSidebarView__23e6b {
+	  margin: var(--kai-spacing-app) !important;
+	  margin-top: 0px !important;
+  }
+  .app_a3002d:nth-child(1) {
+	  color: transparent;
+  }
+  
+		  /*--- 4 Fonts ---*/
+  
+		  /*-- 4.1 Display Font --*/
+  :root {
+	  --kai-font-ui: 'Poppins';
+	  --kai-font-ui-ja: 'Kosugi';
+	  --kai-font-ui-ko: 'Gothic A1';
+	  --kai-font-ui-ru: 'PT Sans Caption';
+	  --kai-font-ui-vi: 'Raleway';
+	  --kai-font-ui-el: 'Commissioner';
+	  --kai-font-body: 'Roboto';
+	  --kai-font-header: 'Righteous';
+	  --kai-font-header-ja: 'RocknRoll One';
+	  --kai-font-header-ko: 'Black Han Sans';
+	  --kai-font-header-ru: 'Russo One';
+	  --kai-font-header-hi: 'Palanquin Dark';
+	  --kai-font-header-th: 'Mitr';
+	  --kai-font-header-el: 'Alegreya Sans';
+  
+	  --font-display: var(--kai-font-ui), 'Poppins', var(--kai-font-ui-ru), 'Comfortaa', var(--kai-font-ui-vi), 'Raleway', var(--kai-font-ui-ja), 'Kosugi',  var(--kai-font-ui-ko), 'Gothic A1', var(--kai-font-ui-el), 'Commissioner', '-apple-system', 'Helvetica Neue', 'system-ui', 'Tahoma', 'Segoe UI', 'Helvetica', 'Whitney', sans-serif !important;
+	  --font-primary: var(--font-display);
+	  --font-japanese: var(--font-display);
+	  --font-korean: var(--font-display);
+	  --font-chinese-simplified: var(--font-display);
+	  --font-chinese-traditional: var(--font-display);
+  }
+  body, button {
+	  font-family: var(--font-display);
+  }
+		  
+		  /*-- 4.2 Text Font --*/
+  ::placeholder, ::-webkit-input-placeholder, p, bodyarea, input, select, textarea,
+  .message__5126c, .markup__75297, /*chat messages*/
+  .form_f75fb0, /* message bar */
+  .search__97492, /* search */
+  .subText__91a9d, /*member list body*/
+  .customStatusText-_4TbWr, /*user's custom status*/
+  .modeDefault-2fEh7a, /*settings small body*/
+  .emojiAliasPlaceholder_e7d73e, /*emoji name placeholder*/
+  .topic__6ec1a, /*channel topic in chat header*/
+  .content_bf3bbb, /*channel topic popup body*/
+  .bd-description /*BD: plugin/theme desc*/ {
+	  font-family: var(--kai-font-body), 'Roboto', '-apple-system', 'Helvetica Neue', 'system-ui', 'Arial', 'Helvetica', 'Whitney', sans-serif !important;
+  }
+		  /*-- 4.3 Names, Titles, and Headers Font --*/
+  header, h1,
+  .nameAndDecorators__91a9d, /*name in member list*/
+  .headerNameWrapper-3res2c, /*nickname in profile popup*/
+  .username_c19a55, /*username in chat*/
+  .headerText-15Q25Z, /*username#tag in profile popup*/
+  .nickname-2gQ76l, /*nickname in profile popup*/
+  .nameTag__37e49, /*your username in the bottom-left*/
+  .detailsInner_de8f28, /*settings: your username in My Account*/
+  .activityName__2ef49, /*user's activity name, includes song and author titles*/
+  .emojiUploader-1f0pVx, /*server settings: emoji's uploader*/
+  .userHook-3AdCBF, /*server settings: username in audit log*/
+  .secondaryHeader-2oeRPO, /*server settings: integrations row headers such as bot names*/
+  .roleName__48c1c, /*role name in profile*/
+  .roleName-35qCvR, .roleName-3910zV, /*role name in server settings*/
+  .membersGroup_c8ffbb, /*role name in member list*/
+  .roleRow-3HnunM, /*role name in context menu*/
+  .roleMention__75297, /*role name mention in chat*/
+  .wrapper_d4fa29, /*username or channel name mention in chat*/
+  [data-slate-object="inline"] .mention, /*mention in message box*/
+  .systemMessage__5126c .anchorUnderlineOnHover-2qPutX, /* links / usernames in system messages */
+  .name__29444, /*category name in sidebar*/
+  .name__2ea32, /*channel name in sidebar*/
+  .title__9293f, /*channel name in chat header*/
+  .title-3hptVQ, /*channel name in channel topic popup*/
+  .bd-author, .bd-meta .bd-link, /*BD: plugin/theme author*/
+  .timestamp_c19a55 /*chat message hover timestamp (counts as a header)*/ {
+	  font-family: var(--kai-font-header), 'Righteous', var(--kai-font-header-ja), 'RocknRoll One', var(--kai-font-header-ko), 'Black Han Sans', var(--kai-font-header-ru), 'Russo One', var(--kai-font-header-hi), 'Palanquin Dark', var(--kai-font-header-th), 'Mitr', var(--kai-font-header-el), 'Alegreya Sans', 'Lalezar', 'Century Gothic', 'Franklin Gothic Medium', 'Britannic', 'Helvetica Neue', 'Helvetica', 'Whitney', sans-serif !important;
+  }
+  
+  /*--- 5 Errors ---*/
+		  
+	  /*-- 5.1 Loading page (disconnection) --*/
+  .container_a2f514 { background-color: hsla(0, 0%, 0%, 0.68) }
+  .quote-3aooyW {
+	  font-size: 20px !important;
+	  margin-bottom: 0px !important;
+	  }
+  .status-1JTY3j, .problemsText_a2f514 {
+	  color: white;
+	  text-transform: none;
+	  font-size: 16px !important;
+  }
+  .attribution-aTC3hS, .links_a2f514 {font-size: 0px !important;}
+  .twitterLink_dae605:before,
+  .statusLink__7b889:before {
+	  background-size: 24px 24px;
+	  height: 24px;
+	  width: 24px;
+  }
+		  
+	  /*-- 5.2 Crash page --*/
+  .errorPage_a57b28 {
+	  width: calc(100% - var(--kai-spacing-app) * 2)
+  }
+  .wrapper__61a6b {
+	  min-height: calc(100vh - var(--kai-spacing-app) * 2)
+  }
+  .theme-dark .wrapper__61a6b,
+  .theme-light .wrapper__61a6b {
+	  background: var(--kai-bgc-ui-base);
+	  margin: var(--kai-spacing-app) calc(var(--kai-spacing-app) * 2) var(--kai-spacing-app) var(--kai-spacing-app);
+	  border-radius: var(--kai-radius-ui);
+  }
+  
+		  /*--- 6 Scrollerbars ---*/
+  .theme-dark ::-webkit-scrollbar-track-piece,
+  .theme-dark .theme-light ::-webkit-scrollbar-track-piece,
+  .theme-light .theme-dark ::-webkit-scrollbar-track-piece {
+	  background:  hsla(0,0%,0%,0.3)!important;
+  }
+  .theme-light ::-webkit-scrollbar-track-piece {
+	  background:  hsla(0,0%,100%,0.3)!important;
+	  border: none!important;
+  }
+  ::-webkit-scrollbar-thumb {
+	  background: var(--kai-accent-ui)!important;
+	  border: none!important;
+	  border-radius: var(--kai-radius-ui);
+  }
+  ::-webkit-scrollbar {
+	  width: var(--kai-scrollbar-width) !important;
+  }
+  ::-webkit-scrollbar-track {
+	  background: transparent!important;
+	  border: none!important;
+  }
+  .scroller_ef3116::-webkit-scrollbar {width: 0!important;}
+  
+  /*--- 7 Modals ---*/
+		  
+	  /*-- 7.1 General Modal --*/
+  .root__49fc1 {
+	  background-color: var(--kai-bgc-popout) !important;
+	  border-radius: var(--kai-radius-ui) !important; 
+	  backdrop-filter: var(--blurcalc-popout);
+  }
+  iframe {
+	  border-radius: var(--kai-radius-ui);
+  }
+  .modal__7f8f5 {background-color: transparent; box-shadow: none;}
+  .backdrop__78332, .backdrop__78332.withLayer__78332 {
+	  background-color: rgba(0, 0, 0, 0.6) !important;
+	  backdrop-filter: var(--blurcalc-ui);
+  }
+  
+  /*--- 8 Popouts ---*/
+		  
+	  /*-- 8.1 General Popout --*/
+  .layer_da8173 > div > div:not(.tooltipPointer__382e7) {
+	  background-color: var(--kai-bgc-popout);
+	  border-radius: var(--kai-radius-ui);
+  }
+  
+  /*--- 9 Titlebar ---*/
+		  
+		  /*-- 9.1 General Titlebar --*/
+  /* settings bg, offset to go behind titlebar */
+  .layer__960e4:has(.standardSidebarView__23e6b) { 
+	  margin-top: 32px;
+  }
+  /*visual refresh stuff*/
+  .bar_c38106 {
+	  background-color: var(--kai-bgc-ui-base);
+	  border-radius: var(--kai-radius-ui);
+  }
+  
+	  /*-- 9.2 MacOS Buttons --*/	
+  .typeMacOS__421ed { 
+	  background: var(--kai-bgc-ui-base);
+	  border-radius: 0 0 var(--kai-radius-ui) 0;
+  }
+  .platform-osx .guilds_c48ade {
+	  padding-top: 8px;
+	  margin-top:calc(20px + var(--kai-spacing-app));
+  }
+  
+		  /*--- 10 Guild List ---*/
+		  
+	  /*-- 10.1 Background + Servers --*/
+  .guilds_c48ade foreignObject {mask: none; overflow: visible;}
+  .guildSeparator__252b6 {display: none}
+  .hiddenVisually__27f77 {background-color: transparent;}
+  .visual-refresh .wrapper_ef3116 {margin-bottom: calc(var(--custom-app-panels-height, 0) + var(--kai-spacing-ui) );}
+  .hiddenVisually__27f77.hover__48112 {background-color: var(--kai-bgc-server-button-hover)}
+  .isExpanded__48112 .folderHeader__48112 svg {padding: 4px;}
+  #app-mount .guilds_c48ade {
+	  background: var(--kai-bgc-ui-base);
+	  border-radius: var(--kai-radius-ui);
+	  margin-right: var(--kai-spacing-app);
+  }
+  .pill__1f388 {border-radius: 0!important;} /*removes the radius on unread message pill*/
+  .visual-refresh .folderPreviewGuildIcon__48112 {border-radius: var(--kai-radius-server)!important;}
+  .listItem__650eb {margin: 0 0 var(--kai-spacing-ui);}
+  .folderGroupBackground__48112 {
+	  border-radius: var(--kai-radius-ui);
+	  left: var(--kai-spacing-ui);
+	  bottom: 0;
+	  background: var(--kai-bgc-server-button);
+  }
+  .folderGroup__48112 ul {height: calc(inherit + var(--kai-spacing-ui)) !important;}
+  .guilds_c48ade .listItem__650eb :not(span) {border-radius: var(--kai-radius-server);}
+  .circleIconButton__5bc7e {
+	  background-color: var(--kai-bgc-server-button);
+	  color: var(--kai-accent-ui);
+  }
+  .circleIconButton__5bc7e.selected__5bc7e,
+  #app-mount .childWrapper__6e9f8:hover {
+	  background-color: var(--kai-bgc-server-button-hover);
+  }
+  
+  /*--- 11 Channels Sidebar ---*/
+		  
+	  /*-- 11.1 General Sidebar --*/
+  .sidebar_c48ade,
+  .bannerImage_f37cb1 {
+	  width: var(--kai-channels-width);
+  }
+  .sidebar_c48ade {
+	  background: var(--kai-bgc-ui-base);
+	  border-radius: var(--kai-radius-ui) !important;
+	  margin-right: var(--kai-spacing-app);
+  }
+  .visual-refresh .sidebarList_c48ade {
+	  background: var(--kai-bgc-ui-base);
+	  margin-bottom: calc(var(--custom-app-panels-height, 0) + var(--kai-spacing-ui) );
+	  border-radius: var(--kai-radius-ui) !important;
+  }
+  .visual-refresh .sidebar_c48ade:after{display: none;}
+  
+  /*--- 12 Main Content ---*/
+  
+	  /*-- 12.1 General Main Content --*/		
+  .sidebar_c48ade + main, .sidebar_c48ade + div {
+	  border-radius: var(--kai-radius-ui);
+	  overflow: hidden;
+  }
+  .visual-refresh .tabBody__133bf {background: transparent;}
+  
+  /*--- 13 Avatars ---*/
+  .callAvatarMask_f910d0 foreignObject, .avatarContainerMasked__183c2 foreignObject, .avatarHint_f89da9 foreignObject,
+  .wrapper__44b0c foreignObject {mask: none;} /* this allows profile popout avatars to be rounded with a custom value */
+  .wrapper__44b0c [mask="url(#svg-mask-avatar-decoration-status-round-120)"] img,
+  .wrapper__44b0c [mask="url(#svg-mask-avatar-decoration-status-round-80)"] img { /* this uncrops the avatar decorations after that line above */
+	border-radius: inherit !important;
+  } 
+  .wrapper__44b0c img, .wrapper-1VLyxH img, .voiceAvatar_f910d0, .border_f910d0, .clickable__75742:hover .overlay__75742:after, .wrapper_f910d0.ringingIncoming_f910d0:after, .wrapper_f910d0.ringingOutgoing_f910d0:after, .avatar_c19a55, .option-2KkUJO.user-23VtPS .displayAvatar-3XS1w6  {
+	  border-radius: var(--kai-radius-avatar) !important; }
+  .avatar_c19a55.clickable_c19a55:active {translate: none;}
+  
+  /*--- 14 Settings ---*/
+  .layer__960e4, .standardSidebarView__23e6b, .contentRegionScroller__23e6b, .sidebarRegionScroller__23e6b, .visual-refresh .standardSidebarView__23e6b {background-color: transparent!important;}
+  .customColumn__23e6b, .contentColumn__23e6b {
+	  max-width: 100%;
+  }
+  .sidebarRegion__23e6b {
+	  max-width: 218px;
+	  margin-right: var(--kai-spacing-app);
+  }
+  .sidebarRegion__23e6b .sidebar__23e6b {max-width: 218px;}
+  .headerText_b3f026 {overflow: hidden;}
+  .standardSidebarView__23e6b .contentRegion__23e6b {
+	  max-width: 100%;
+  }
+  .standardSidebarView__23e6b .contentRegion__23e6b.default,
+  .standardSidebarView__23e6b .sidebarRegion__23e6b .sidebar {
+	  padding-top: 45px;
+  }
+  .sidebar__23e6b {
+	  padding: calc(30px + var(--kai-spacing-ui)) var(--kai-spacing-ui) var(--kai-spacing-ui) calc(var(--kai-spacing-ui) * 2)
+  }
+  .contentColumnDefault__23e6b {
+	  padding: calc(30px + var(--kai-spacing-ui)) calc(var(--kai-spacing-ui) * 2) calc(var(--kai-spacing-ui) * 2);
+  }
+  .horizontal__7c0ba>.flex__7c0ba, .horizontal__7c0ba>.flexChild__7c0ba {
+	  margin-left: var(--kai-spacing-ui);
+  }
+  
+  .marginBottom8_fd297e {
+	  margin-bottom: var(--kai-spacing-ui);
+  }
+  .marginBottom40_fd297e {
+	  margin-bottom: calc(10px + var(--kai-spacing-ui));
+  }
+  .marginTop40_fd297e {
+	  margin-top: calc(10px + var(--kai-spacing-ui));
+  }
+  
+  .platform-osx [id="user-settings"] {
+	  left: -5px !important;
+	  top: -5px !important;
+	  right: -5px !important;
+	  bottom: -5px !important;
+  }
+  
+  .platform-win [id="user-settings"] {
+	  left: -5px !important;
+	  top: -27px !important;
+	  right: -5px !important;
+	  bottom: -5px !important;
+  }
+  
+  .platform-linux [id="user-settings"] {
+	  left: -5px !important;
+	  top: -5px !important;
+	  right: -5px !important;
+	  bottom: -5px !important;
+  }
+  
+  #app-mount .standardSidebarView__23e6b .contentRegion__23e6b,
+  #app-mount .standardSidebarView__23e6b .sidebarRegion__23e6b {
+	  background-color: var(--kai-bgc-ui-base);
+	  border-radius: var(--kai-radius-ui);
+  }
+  #app-mount .standardSidebarView__23e6b .contentRegion__23e6b,
+  #app-mount .standardSidebarView__23e6b .sidebarRegion__23e6b,
+  .itemDefault-3Jdr52,
+  .itemHover-EnbcjT,
+  .ui-tab-bar-item,
+  #app-mount .side-2ur1Qk .itemDefault-3Jdr52:hover,
+  #app-mount .side-2ur1Qk .itemHover-EnbcjT:hover,
+  #app-mount #bd-settings-sidebar .ui-tab-bar-item:hover,
+  #app-mount .closeButton_c2b141 {
+	  transition-property: background-color;
+	  transition-duration: var(--kai-anim-short);
+  }
+  .cardPrimary-3qRT__, .cardPrimaryOutline-1ofwVz {
+	  background-color: var(--kai-bgc-button);
+	  border-radius: var(--kai-radius-ui);
+  }
+  
+  #app-mount .closeButton_c2b141 {
+	  border-color: var(--kai-accent-ui);
+	  border-radius: var(--kai-radius-ui);
+	  &:hover {background-color: var(--kai-bgc-button-hover);}
+	  & path {fill: var(--kai-accent-ui)!important;}
+	  &:hover path {fill: white}
+	  & + .keybind_c2b141 {color: var(--text-normal)!important;}
+  }
+  #app-mount .closeButton_c2b141
+  .item-2idW98 {
+	  background-color: var(--kai-bgc-ui-base);
+	  transition: var(--kai-anim-button);
+	  border-radius: var(--kai-radius-ui);
+	  &:hover:not([aria-checked=true]) {
+		  background-color: var(--kai-bgc-radiobar-hover);
+	  }
+	  &[aria-checked=true] {
+		  background-color: var(--kai-bgc-radiobar-selected);
+	  }
+  }
+  .headerText_b3f026 { overflow-x: clip; }
+  
+  /*--- 15 Client mod specific ---*/
+  
+	  /*-- 15.1 BetterDiscord --*/	
+  /*- 15.1.1 Addon lists -*/
+  .bd-addon-list.bd-grid-view {
+	  column-gap: var(--kai-spacing-ui);
+	  row-gap: var(--kai-spacing-ui);
+  }
+  .bd-addon-list .bd-addon-card {
+	  background: var(--kai-bgc-ui-card);
+	  border: none; border-radius: var(--kai-radius-ui) !important;
+	  max-height: 100%;
+	  padding: var(--kai-spacing-ui);
+	  margin-bottom: var(--kai-spacing-ui);
+  }
+  .bd-addon-list .bd-addon-header,
+  .bd-description-wrap,
+  .bd-addon-list .bd-footer {
+	  padding: var(--kai-spacing-ui);
+  }
+  .bd-addon-list .bd-addon-header {
+	  border-radius: var(--kai-radius-ui);
+  }
+  .bd-select-transparent .bd-select-options { border-radius: var(--kai-radius-ui) !important; border-color: var(--kai-bg-1);}
+  .bd-search-wrapper, .bd-select .bd-select-option:hover, .bd-select .bd-select-option.selected { background: var(--kai-bg-1);}
+  .bda-slist .bda-header {
+	  font-size: 14px;
+	  line-height: 1.25;
+	  padding-bottom: 5px;
+  }
+  .bda-slist .bda-description {
+	  max-height: 100%;
+	  overflow-y: hidden;
+	  padding: 0;
+	  padding-bottom: 2px;
+  }
+  .bda-slist .bda-footer, .bda-slist .bda-header {border: none;}
+  .bda-name, .bda-author {
+	  font-size: 16px;
+  }
+  .bd-meta a.bd-link.bd-link-website {
+	  color: var(--kai-accent-ui);
+  }
+  .bda-links {
+	  font-size: 0;
+	  & .bda-link {
+		  font-size: 12px;
+	  }
+	  &:not(:first-of-type) {
+		  margin-left: 10px;
+	  }
+  }
+  .theme-dark .bda-slist .bda-header, .theme-dark .bda-slist .bda-description  { color: white; }
+  
+		  /*- 15.1.1 Toast Notifications -*/
+  .toast, .bd-toast {
+	  opacity: 0.7;
+	  background: var(--kai-accent-ui)!important;
+	  border-radius: var(--kai-radius-ui)!important;
+	  box-shadow: none!important;
+  }
+  
+  /*--- CUSTOM VISUAL REFRESH STYLES ---*/
+  .visual-refresh{
+	  .appMount__51fd7 { 
+		  background: transparent; 
+		  background-image: var(--kai-main-bg); 
+		  background-size: cover; 
+	  } 
+	  .app__160d8 { 
+		  background: transparent; 
+	  } 
+	  .bg__960e4 { 
+		  background: var(--kai-bg-overlay); 
+	  } 
+	  .wrapper_ef3116 { 
+		  background: transparent; 
+	  } 
+	  .panels_c48ade { 
+		  background: var(--panels-background); 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .sidebar_c48ade:after { 
+		  background: transparent; 
+	  } 
+	  .container__2637a { 
+		  background: transparent; 
+	  } 
+	  .chat_f75fb0 { 
+		  background: transparent; 
+	  } 
+	  .chatContent_f75fb0 { 
+		  background: transparent; 
+	  } 
+	  .themed__9293f { 
+		  background: transparent; 
+	  } 
+	  .container_c8ffbb { 
+		  background: transparent; 
+	  } 
+	  .members_c8ffbb { 
+		  background: transparent; 
+	  } 
+	  .channelTextArea_f75fb0 { 
+		  background: var(--kai-message-box-bg); 
+	  } 
+	  .themedBackground__74017 { 
+		  background: transparent; 
+	  } 
+	  .privateChannels__35e86 { 
+		  background: transparent; 
+	  } 
+	  .scroller__99e7c { 
+		  background: transparent; 
+	  } 
+	  .children__9293f:after { 
+		  background: transparent; 
+	  } 
+	  .wrapper_ef3116 { 
+		  width: var(--kai-server-list-width); 
+	  } 
+	  .scrollerWrap-1IAIlv { 
+		  width: calc(var(--kai-server-list-width) + 6px); 
+	  } 
+	  .wrapper_ef3116 .scroller_ef3116 { 
+		  display: flex; 
+		  flex-flow: row wrap; 
+		  padding-left: 0; 
+		  align-content: flex-start; 
+	  } 
+	  .stack_dbd263 .listItem__650eb:not(.wrapper__48112 .listItem__650eb) { 
+		  width: initial; 
+		  padding: 1px; 
+		  margin: 2px; 
+	  } 
+	  .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 .stack_dbd263 { 
+		  justify-content: center; 
+	  } 
+	  .stack_dbd263 .wrapper__48112 .listItem__650eb { 
+		  width: initial; 
+	  } 
+	  .scroller_ef3116 > .listItem__650eb { 
+		  width: 100%; 
+	  } 
+	  .listItem-GuPuDH { 
+		  width: auto; 
+		  margin-left: 0px; 
+	  } 
+	  .wrapper-21YSNc { 
+		  position: relative; 
+		  width: auto; 
+	  } 
+	  .pill_e5445c { 
+		  width: 100% !important; 
+	  } 
+	  .wrapper__58105 { 
+		  overflow: visible !important; 
+	  } 
+	  .item__58105 { 
+		  animation: var(--kai-unread-server-animation) 3s linear infinite; 
+		  border: 2px solid var(--kai-accent); 
+		  background: transparent; 
+		  display: block; 
+		  border-radius: 30% !important; 
+		  position: absolute; 
+		  transform: none !important; 
+		  inset: 0 !important; 
+		  top: -2px !important; 
+		  left: 2px !important; 
+		  width: 100%; 
+		  height: 100% !important; 
+	  } 
+	  .pill_e5445c .item__58105:not([style*="height: 8px"]) { 
+		  border-color: transparent; 
+		  background-color: initial; 
+	  } 
+	  .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 { 
+		  justify-content: center; 
+	  } 
+	  .stack_dbd263 { 
+		  display: flex !important; 
+		  flex-direction: column !important; 
+		  flex-flow: row wrap !important; 
+		  align-items: flex-start !important; 
+	  } 
+	  .tutorialContainer__1f388 { 
+		  display: flex; 
+		  justify-content: center; 
+		  width: 100%; 
+	  } 
+	  .stack_dbd263 .wrapper__48112 { 
+		  width: fit-content !important; 
+	  } 
+	  .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 > .listItem__650eb { 
+		  margin-bottom: 8px; 
+		  width: 80%; 
+		  display: flex; 
+		  flex-direction: row; 
+		  flex-flow: row wrap; 
+		  justify-content: flex-start; 
+		  align-items: flex-start; 
+	  } 
+	  .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2:last-child .listItem__650eb { 
+		  width: initial; 
+	  } 
+	  .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2:last-child .listItem__650eb .pill__5bc7e { 
+		  display: none !important; 
+	  } 
+	  .wrapper__48112.isExpanded__48112 .listItem__650eb { 
+		  width: 100% !important; 
+	  } 
+	  .stack_dbd263.scroller_ef3116.none_d125d2.scrollerBase_d125d2 > div .listItem__650eb .pill_ed9a5f.wrapper__58105 { 
+		  display: none !important; 
+	  } 
+	  .wrapper__48112.isExpanded__48112 .stack_dbd263 { 
+		  height: fit-content !important; 
+		  display: flex !important; 
+		  flex-direction: column !important; 
+	  } 
+	  .wrapper__48112.isExpanded__48112 .listItem__650eb { 
+		  width: 100%; 
+	  } 
+	  .wrapper__48112.isExpanded__48112 .stack_dbd263 .listItem__650eb .pill_e5445c.wrapper__58105 .item__58105 { 
+		  width: 85% !important; 
+		  height: 100% !important; 
+		  left: 5px !important; 
+		  top: -2px !important; 
+	  } 
+	  .wrapper__48112.isExpanded__48112 .stack_dbd263 { 
+		  overflow: visible; 
+	  } 
+	  .expandedFolderBackground__48112 { 
+		  left: 0px; 
+	  } 
+	  .tutorialContainer__1f388 .listItem__650eb .pill__1f388.wrapper__58105 { 
+		  display: none; 
+	  } 
+	  /* Hide the original Discord home icon - target the specific structure */
+	  [data-list-item-id="guildsnav___home"] img[alt="App Icon"],
+	  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8 img,
+	  .tutorialContainer__1f388 img[alt="App Icon"] { 
+		  display: none !important; 
+		  opacity: 0 !important;
+		  visibility: hidden !important;
+	  } 
+	  /* Show custom home icon - target the wrapper inside the foreignObject */
+	  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8,
+	  .tutorialContainer__1f388 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 { 
+		  background-image: var(--kai-home-icon) !important; 
+		  background-size: var(--kai-home-icon-zoom) !important; 
+		  background-position: var(--kai-home-icon-position) !important; 
+		  background-repeat: no-repeat !important; 
+		  background-color: transparent !important;
+		  width: 48px !important;
+		  height: 48px !important;
+	  } 
+	  .tutorialContainer__1f388 .wrapper_cc5dd2 .wrapper__6e9f8 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8 { 
+		  background-color: transparent; 
+	  } 
+	  .folderGroup__48112 { 
+		  width: 54px !important; 
+	  } 
+	  .folderGroup__48112:not(.isExpanded__48112) .listItem__650eb .pill_e5445c.wrapper__58105 .item__58105 { 
+		  margin-left: -3px !important; 
+		  width: 48px !important; 
+	  } 
+	  .stack_dbd263.folderGuildsList__48112 { 
+		  height: 100% !important; 
+	  } 
+	  .folderGroupBackground__48112 { 
+		  left: 3px; 
+	  } 
+	  .unreadMentionsIndicatorTop_ef3116 { 
+		  justify-self: center; 
+	  } 
+	  .wrapper_ef3116 .scroller_ef3116 { 
+		  justify-content: center; 
+	  } 
+	  .tabBody__133bf { 
+		  background: transparent; 
+	  } 
+	  .container__133bf { 
+		  background: transparent; 
+	  } 
+	  .member_c8ffbb { 
+		  background-color: transparent; 
+	  } 
+	  .nowPlayingColumn__133bf { 
+		  background-color: transparent; 
+	  } 
+	  .container__7d20c { 
+		  background-color: transparent; 
+	  } 
+	  .wrapper_d852db { 
+		  background: transparent; 
+	  } 
+	  .wrapper_fc8177 { 
+		  background: transparent; 
+	  } 
+	  .standardSidebarView__23e6b { 
+		  background: transparent; 
+	  } 
+	  .sidebarRegionScroller__23e6b { 
+		  background: transparent; 
+	  } 
+	  .layer__960e4 { 
+		  background: transparent; 
+	  } 
+	  .contentRegion__23e6b { 
+		  background: transparent; 
+	  } 
+	  .contentRegionScroller__23e6b { 
+		  background-color: transparent; 
+	  } 
+	  .channelAttachmentArea_b77158 { 
+		  background-color: transparent; 
+	  } 
+	  .upload_aa605f { 
+		  background-color: transparent; 
+	  } 
+	  .guildSeparator__252b6 { 
+		  display: none; 
+	  } 
+	  .searchBar__5ec2f { 
+		  background-color: transparent; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .itemCard__7e549.wrapper__00943.outer_bf1984.padded_bf1984.interactive_bf1984 { 
+		  background-color: transparent; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .embedFull__623de { 
+		  background-color: transparent !important; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .footer__4d95d { 
+		  background: transparent; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .textContainer__4d95d { 
+		  backdrop-filter: blur(15px) !important; 
+	  } 
+	  .container__0f2e8 { 
+		  background-color: transparent !important; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .panel__5dec7 { 
+		  background-color: transparent !important; 
+	  } 
+	  .scroller__28a87 { 
+		  background-color: transparent; 
+	  } 
+	  .root_bfe55a { 
+		  background: transparent; 
+	  } 
+	  .wrapper_cb9592 { 
+		  background: transparent; 
+	  } 
+	  .callContainer_cb9592 { 
+		  background: transparent; 
+	  } 
+	  .resizeHandle__01ae2 { 
+		  background: transparent; 
+	  } 
+	  .container__01ae2 { 
+		  background: transparent; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .chatLayerWrapper__01ae2 { 
+		  background: transparent; 
+	  } 
+	  .channelChatWrapper_cb9592 { 
+		  background: transparent; 
+	  } 
+	  .container_f369db { 
+		  background: transparent; 
+	  } 
+	  .mainCard_f369db { 
+		  background: transparent; 
+		  backdrop-filter: blur(5px); 
+	  } 
+	  .container_faa96b:hover { 
+		  background: transparent; 
+		  backdrop-filter: blur(15px); 
+	  }
+  }
+  
+  /* Rainbow animation for unread servers */
+  @keyframes rainbow { 
+	  0% { 
+		  -webkit-filter: hue-rotate(0); 
+		  -moz-filter: hue-rotate(0); 
+		  -ms-filter: hue-rotate(0); 
+		  filter: hue-rotate(0); 
+	  } 
+	  100% { 
+		  -webkit-filter: hue-rotate(360deg); 
+		  -moz-filter: hue-rotate(360deg); 
+		  -ms-filter: hue-rotate(360deg); 
+		  filter: hue-rotate(360deg); 
+	  } 
+  }
+  
+  /* ========================================
+	 🏠 HOME ICON REPLACEMENT (DIRECT MESSAGES ICON)
+	 ======================================== */
+  /* Hide original Discord home icon images */
+  [data-list-item-id="guildsnav___home"] img[alt="App Icon"],
+  [data-list-item-id="guildsnav___home"] img[src*="e8396e79419904ca.webp"],
+  [data-list-item-id="guildsnav___home"] img[src*="app-icon"],
+  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8 img,
+  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8 svg,
+  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8 foreignObject img,
+  .tutorialContainer__1f388 img[alt="App Icon"],
+  .tutorialContainer__1f388 img[src*="e8396e79419904ca.webp"],
+  /* Additional selectors for different Discord layouts */
+  [data-list-item-id="guildsnav___home"] svg,
+  [data-list-item-id="guildsnav___home"] .icon__0cbed,
+  [data-list-item-id="guildsnav___home"] .iconContainer__8fa9c,
+  [data-list-item-id="guildsnav___home"] foreignObject svg,
+  [data-list-item-id="guildsnav___home"] foreignObject img { 
+	  display: none !important; 
+	  opacity: 0 !important;
+	  visibility: hidden !important;
+	  width: 0 !important;
+	  height: 0 !important;
+  } 
+  
+  /* Apply custom home icon to multiple possible containers */
+  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8,
+  [data-list-item-id="guildsnav___home"] .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8,
+  .tutorialContainer__1f388 .childWrapper__6e9f8.childWrapperNoHoverBg__6e9f8,
+  /* Additional selectors for different layouts */
+  [data-list-item-id="guildsnav___home"] .wrapper__6e9f8,
+  [data-list-item-id="guildsnav___home"] .iconContainer__8fa9c,
+  [data-list-item-id="guildsnav___home"] .icon__0cbed,
+  /* Classic layout specific selectors */
+  [data-list-item-id="guildsnav___home"] .listItem__650eb,
+  [data-list-item-id="guildsnav___home"] .wrapper__48112,
+  [data-list-item-id="guildsnav___home"] .circleIconButton__5bc7e { 
+	  background-image: var(--kai-home-icon) !important; 
+	  background-size: var(--kai-home-icon-zoom) !important; 
+	  background-position: var(--kai-home-icon-position) !important; 
+	  background-repeat: no-repeat !important; 
+	  background-color: transparent !important;
+	  width: 48px !important;
+	  height: 48px !important;
+	  border-radius: var(--kai-radius-server) !important;
+  } 
+  
+  /* Ensure the home icon container has proper dimensions */
+  [data-list-item-id="guildsnav___home"],
+  [data-list-item-id="guildsnav___home"] .listItem__650eb,
+  [data-list-item-id="guildsnav___home"] .wrapper__48112 {
+	  min-width: 48px !important;
+	  min-height: 48px !important;
+	  width: 48px !important;
+	  height: 48px !important;
+  }
+  
+  /* Force the home icon to show even if Discord tries to override it */
+  [data-list-item-id="guildsnav___home"] * {
+	  background-image: var(--kai-home-icon) !important; 
+	  background-size: var(--kai-home-icon-zoom) !important; 
+	  background-position: var(--kai-home-icon-position) !important; 
+	  background-repeat: no-repeat !important; 
+  }
+  
+  
+  
+  /* ========================================
+	 🎨 CUSTOMIZATION SECTION (EDIT BELOW)
+	 ======================================== */
+  :root {
+	/*
+	 * MAIN BACKGROUND IMAGE
+	 * Sets the background image for Discord. Change the URL to any image you like.
+	 * Example: url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4)
+	 */
+	--kai-main-bg: url(https://images2.alphacoders.com/275/275112.jpg);
+  
+	  /*
+   * MAIN ACCENT COLOR (NOTIFICATION BORDERS)
+   * This controls the color of notification borders and some UI highlights.
+   * WARNING: Discord may shift this color automatically, so it might not appear exactly as set.
+   * Example: rgb(59, 130, 246) for blue, #ff0000 for red
+   */
+ 	--kai-accent: rgb(133, 5, 5);
+  
+	/*
+	 * BACKGROUND OVERLAY TRANSPARENCY
+	 * Controls the darkness/opacity of the overlay on top of the background image.
+	 * Example: rgba(31, 31, 31, 0.664) (0 = transparent, 1 = opaque)
+	 */
+	--kai-bg-overlay: rgb(255, 255, 255);
+  
+	/*
+	 * MESSAGE BOX TRANSPARENCY
+	 * Controls how transparent the chat/message boxes are.
+	 * Example: rgba(0, 0, 0, 0.6)
+	 */
+	--kai-message-box-bg: rgba(56, 0, 0, 0.705);
+  
+	/*
+	 * SERVER LIST WIDTH
+	 * How wide the server list sidebar is. Use px values.
+	 * Example: 126px
+	 */
+	--kai-server-list-width: 126px;
+  
+	/*
+	 * HOME ICON IMAGE
+	 * Sets a custom image for the Discord home icon (Direct Messages). Change the URL to any image.
+	 * Example: url(https://i.imgur.com/63g6Em8.jpg)
+	 */
+	--kai-home-icon: url(https://i.pinimg.com/736x/20/5f/3d/205f3d8b45b2eb2a355d1fd3e3c7738e.jpg);
+	/*
+	 * HOME ICON POSITION
+	 * Controls the position of the home icon image. Example: center center
+	 */
+	--kai-home-icon-position: center center;
+	/*
+	 * HOME ICON ZOOM
+	 * Controls the size/zoom of the home icon image. Example: 100%
+	 */
+	--kai-home-icon-zoom: 100%;
+  
+	/*
+	 * UNREAD SERVER ANIMATION
+	 * Animation for servers with unread messages. Example: rainbow, none
+	 */
+	--kai-unread-server-animation: rainbow;
+  
+	/*
+	 * FONT SIZE
+	 * Controls the size of all text. Example: 100%, 120%
+	 */
+	--kai-font-size: 100%;
+	/*
+	 * UI FONT FAMILY
+	 * Font for buttons, menus, and interface elements.
+	 */
+	--kai-font-ui: 'Poppins';
+	/*
+	 * BODY FONT FAMILY
+	 * Font for messages and general text.
+	 */
+	--kai-font-body: 'Roboto';
+	/*
+	 * HEADER FONT FAMILY
+	 * Font for titles, usernames, and headers.
+	 */
+	--kai-font-header: 'Righteous';
+  
+	/*
+	 * UI BORDER RADIUS
+	 * How rounded the corners are on UI elements. Example: 10px, 50%
+	 */
+	--kai-radius-ui: 10px;
+	/*
+	 * AVATAR BORDER RADIUS
+	 * How rounded user avatars are. Example: 20%, 50%
+	 */
+	--kai-radius-avatar: 50%;
+	/*
+	 * SERVER ICON BORDER RADIUS
+	 * How rounded server icons are. Example: 20%, 50%
+	 */
+	--kai-radius-server: 20%;
+  
+	/*
+	 * UI SPACING
+	 * Spacing between UI elements. Example: 10px
+	 */
+	--kai-spacing-ui: 10px;
+	/*
+	 * APP SPACING
+	 * Overall app layout spacing. Example: 10px
+	 */
+	--kai-spacing-app: 10px;
+	/*
+	 * CHANNEL LIST WIDTH
+	 * How wide the channel list is. Example: 240px
+	 */
+	--kai-channels-width: 240px;
+	/*
+	 * MEMBER LIST WIDTH
+	 * How wide the member list is. Example: 240px
+	 */
+	--kai-members-width: 240px;
+  
+	/*
+	 * AVATAR SIZES
+	 * Controls the size of avatars in chat, lists, and profiles.
+	 */
+	--kai-icon-avatar-chat: 64px;
+	--kai-icon-avatar-list: 32px;
+	--kai-icon-avatar-profile: 80px;
+  
+	/*
+	 * ANIMATION DURATIONS
+	 * How fast animations play. Example: 0.2s, 0.5s
+	 */
+	--kai-anim-short: 0.2s;
+	--kai-anim-long: 0.5s;
+	--kai-anim-button: 0.25s;
+  
+	/*
+	 * BLUR SCALE
+	 * Intensity of blur effects. Example: 0 (none), 100 (normal), 150 (heavy)
+	 */
+	--kai-blur-scale: 100;
+  
+	/*
+	 * MENTION COLORS
+	 * Colors for when someone mentions you.
+	 */
+	--kai-mention-color: rgba(250, 166, 26, 0.05);
+	--kai-mention-sider: rgba(250, 166, 26, 1);
+	--kai-mention-hover-color: rgba(250, 166, 26, 0.08);
+  
+	/*
+	 * SERVER CATEGORY HOVER COLOR
+	 * Color when hovering over server categories.
+	 */
+	--kai-category-hover-color: rgb(60, 202, 138);
+  
+	  /*
+   * SCROLLBAR COLOR
+   * Color of scrollbars throughout Discord.
+   * Example: rgba(255, 255, 255, 0.3) for white, rgba(0, 0, 0, 0.5) for black
+   */
+ 	--kai-scrollbar-color: rgba(245, 243, 243, 0.2);
+
+  /*
+   * ========================================
+   * 🎨 ADVANCED CUSTOMIZATION OPTIONS
+   * ========================================
+   */
+
+  /*
+   * BUTTON COLORS
+   * Colors for various buttons throughout Discord.
+   */
+  /*
+   * PRIMARY BUTTON COLOR
+   * Main action buttons like "Send Message", "Join Server", etc.
+   * Example: rgb(88, 101, 242) for Discord blue, rgb(255, 0, 0) for red
+   */
+  --kai-button-primary: rgb(88, 101, 242);
+  /*
+   * PRIMARY BUTTON HOVER COLOR
+   * Color when hovering over primary buttons.
+   * Example: rgb(71, 82, 196) for darker blue
+   */
+  --kai-button-primary-hover: rgb(71, 82, 196);
+  /*
+   * SECONDARY BUTTON COLOR
+   * Secondary buttons like "Cancel", "Back", etc.
+   * Example: rgb(79, 84, 92) for gray
+   */
+  --kai-button-secondary: rgb(79, 84, 92);
+  /*
+   * DANGER BUTTON COLOR
+   * Buttons for destructive actions like "Delete", "Leave Server".
+   * Example: rgb(237, 66, 69) for red
+   */
+  --kai-button-danger: rgb(237, 66, 69);
+
+  /*
+   * TEXT COLORS
+   * Colors for different types of text throughout Discord.
+   */
+  /*
+   * HEADER TEXT COLOR
+   * Color of main headers and titles.
+   * Example: rgb(255, 255, 255) for white, rgb(0, 0, 0) for black
+   */
+  --kai-text-header: rgb(255, 255, 255);
+  /*
+   * NORMAL TEXT COLOR
+   * Color of regular text in messages and UI.
+   * Example: rgb(220, 221, 222) for light gray
+   */
+  --kai-text-normal: rgb(220, 221, 222);
+  /*
+   * MUTED TEXT COLOR
+   * Color of less important text like timestamps, status messages.
+   * Example: rgb(185, 187, 190) for muted gray
+   */
+  --kai-text-muted: rgb(185, 187, 190);
+  /*
+   * LINK TEXT COLOR
+   * Color of clickable links.
+   * Example: rgb(0, 132, 255) for blue
+   */
+  --kai-text-link: rgb(0, 132, 255);
+  /*
+   * SUCCESS TEXT COLOR
+   * Color for positive/success messages.
+   * Example: rgb(87, 242, 135) for green
+   */
+  --kai-text-success: rgb(87, 242, 135);
+  /*
+   * WARNING TEXT COLOR
+   * Color for warning messages.
+   * Example: rgb(255, 185, 77) for orange
+   */
+  --kai-text-warning: rgb(255, 185, 77);
+  /*
+   * ERROR TEXT COLOR
+   * Color for error messages.
+   * Example: rgb(237, 66, 69) for red
+   */
+  --kai-text-error: rgb(237, 66, 69);
+
+  /*
+   * BACKGROUND COLORS
+   * Colors for different background areas.
+   */
+  /*
+   * MAIN BACKGROUND COLOR
+   * Primary background color for the main Discord interface.
+   * Example: rgb(32, 34, 37) for dark gray
+   */
+  --kai-bg-main: rgb(32, 34, 37);
+  /*
+   * SECONDARY BACKGROUND COLOR
+   * Background for secondary areas like sidebars.
+   * Example: rgb(47, 49, 54) for lighter dark gray
+   */
+  --kai-bg-secondary: rgb(47, 49, 54);
+  /*
+   * TERTIARY BACKGROUND COLOR
+   * Background for tertiary areas like popups.
+   * Example: rgb(64, 68, 75) for even lighter gray
+   */
+  --kai-bg-tertiary: rgb(64, 68, 75);
+  /*
+   * ELEVATED BACKGROUND COLOR
+   * Background for elevated elements like modals.
+   * Example: rgb(54, 57, 63) for elevated gray
+   */
+  --kai-bg-elevated: rgb(54, 57, 63);
+
+  /*
+   * BORDER COLORS
+   * Colors for borders and dividers.
+   */
+  /*
+   * PRIMARY BORDER COLOR
+   * Main border color for UI elements.
+   * Example: rgb(64, 68, 75) for gray
+   */
+  --kai-border-primary: rgb(64, 68, 75);
+  /*
+   * SECONDARY BORDER COLOR
+   * Secondary border color for less prominent elements.
+   * Example: rgb(47, 49, 54) for darker gray
+   */
+  --kai-border-secondary: rgb(47, 49, 54);
+  /*
+   * FOCUS BORDER COLOR
+   * Border color when elements are focused/selected.
+   * Example: rgb(88, 101, 242) for Discord blue
+   */
+  --kai-border-focus: rgb(88, 101, 242);
+
+  /*
+   * INTERACTIVE ELEMENT COLORS
+   * Colors for interactive elements like inputs and selectors.
+   */
+  /*
+   * INPUT BACKGROUND COLOR
+   * Background color for text inputs and textareas.
+   * Example: rgb(64, 68, 75) for gray
+   */
+  --kai-input-bg: rgb(64, 68, 75);
+  /*
+   * INPUT BORDER COLOR
+   * Border color for text inputs.
+   * Example: rgb(79, 84, 92) for gray
+   */
+  --kai-input-border: rgb(79, 84, 92);
+  /*
+   * INPUT FOCUS BORDER COLOR
+   * Border color when input is focused.
+   * Example: rgb(88, 101, 242) for Discord blue
+   */
+  --kai-input-focus-border: rgb(88, 101, 242);
+  /*
+   * INPUT PLACEHOLDER COLOR
+   * Color of placeholder text in inputs.
+   * Example: rgb(185, 187, 190) for muted gray
+   */
+  --kai-input-placeholder: rgb(185, 187, 190);
+
+  /*
+   * STATUS COLORS
+   * Colors for user status indicators.
+   */
+  /*
+   * ONLINE STATUS COLOR
+   * Color for online status indicator.
+   * Example: rgb(87, 242, 135) for green
+   */
+  --kai-status-online: rgb(87, 242, 135);
+  /*
+   * IDLE STATUS COLOR
+   * Color for idle status indicator.
+   * Example: rgb(250, 166, 26) for orange
+   */
+  --kai-status-idle: rgb(250, 166, 26);
+  /*
+   * DO NOT DISTURB STATUS COLOR
+   * Color for do not disturb status indicator.
+   * Example: rgb(237, 66, 69) for red
+   */
+  --kai-status-dnd: rgb(237, 66, 69);
+  /*
+   * OFFLINE STATUS COLOR
+   * Color for offline status indicator.
+   * Example: rgb(116, 127, 141) for gray
+   */
+  --kai-status-offline: rgb(116, 127, 141);
+
+  /*
+   * ANIMATION SETTINGS
+   * Control how animations behave throughout Discord.
+   */
+  /*
+   * ANIMATION SPEED MULTIPLIER
+   * How fast all animations play. 1 = normal, 0.5 = half speed, 2 = double speed.
+   * Example: 1 for normal, 0.5 for slower, 2 for faster
+   */
+  --kai-animation-speed: 1;
+  /*
+   * HOVER ANIMATION DURATION
+   * How long hover animations take to complete.
+   * Example: 0.2s for fast, 0.5s for slow
+   */
+  --kai-hover-animation: 0.2s;
+  /*
+   * TRANSITION ANIMATION DURATION
+   * How long transition animations take to complete.
+   * Example: 0.3s for smooth, 0.1s for snappy
+   */
+  --kai-transition-animation: 0.3s;
+
+  /*
+   * SHADOW SETTINGS
+   * Control shadows and depth effects.
+   */
+  /*
+   * PRIMARY SHADOW
+   * Main shadow for elevated elements.
+   * Example: 0 2px 10px rgba(0, 0, 0, 0.2) for subtle shadow
+   */
+  --kai-shadow-primary: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /*
+   * SECONDARY SHADOW
+   * Secondary shadow for less elevated elements.
+   * Example: 0 1px 3px rgba(0, 0, 0, 0.1) for light shadow
+   */
+  --kai-shadow-secondary: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /*
+   * HOVER SHADOW
+   * Shadow that appears on hover.
+   * Example: 0 4px 20px rgba(0, 0, 0, 0.3) for prominent hover shadow
+   */
+  --kai-shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+  /*
+   * OPACITY SETTINGS
+   * Control transparency of various elements.
+   */
+  /*
+   * HOVER OPACITY
+   * How transparent elements become on hover.
+   * Example: 0.8 for 80% opacity, 0.5 for 50% opacity
+   */
+  --kai-hover-opacity: 0.8;
+  /*
+   * DISABLED OPACITY
+   * How transparent disabled elements are.
+   * Example: 0.5 for 50% opacity, 0.3 for 30% opacity
+   */
+  --kai-disabled-opacity: 0.5;
+  /*
+   * OVERLAY OPACITY
+   * How transparent overlays are.
+   * Example: 0.7 for 70% opacity, 0.9 for 90% opacity
+   */
+  --kai-overlay-opacity: 0.7;
+  }
+  
+  /*
+	HOW TO CUSTOMIZE:
+	- Change the values in the section above to your liking.
+	- For backgrounds, use any image URL you want.
+	- For colors, use rgb(), hex, or hsl values.
+	- For fonts, use any installed font or Google Font (if you add the import).
+	- For spacing, radius, and sizes, use px or % values.
+  */
+  
+  /* =============================
+   DISCORD CUSTOMIZATION VARIABLES (EDIT THESE FOR EASY THEMING)
+   ============================= */
+:root {
+  /* --- Brand/Accent Colors --- */
+  --brand-experiment: #5865f2; /* Main Discord blurple */
+  --brand-experiment-100: #a3a6fa;
+  --brand-experiment-200: #8c8efa;
+  --brand-experiment-300: #7478fa;
+  --brand-experiment-400: #5c62fa;
+  --brand-experiment-500: #5865f2; /* Default */
+  --brand-experiment-600: #4752c4;
+  --brand-experiment-700: #3c45a5;
+  --brand-experiment-800: #232946;
+  --brand-experiment-900: #1e2235;
+  /* --- Backgrounds --- */
+  --background-primary: #313338; /* Main app background */
+  --background-secondary: #2b2d31; /* Sidebar, popouts */
+  --background-tertiary: #232428; /* Cards, modals */
+  --background-floating: #18191c; /* Context menus, tooltips */
+  --background-accent: var(--brand-experiment-500); /* Accent backgrounds */
+  --panels-background: var(--background-secondary); /* Panels background color */
+  --message-box-background: var(--kai-message-box-bg); /* Message box background */
+  /* --- Text Colors --- */
+  --text-normal: #dbdee1; /* Main text */
+  --text-muted: #a3a6aa; /* Muted/secondary text */
+  --text-link: #00b0f4; /* Links */
+  --text-danger: #ed4245; /* Errors, warnings */
+  --text-positive: #3ba55d; /* Success, positive */
+  --text-warning: #faa81a; /* Warnings */
+  /* --- Border Radii --- */
+  --radius-xs: 4px; /* Smallest corners */
+  --radius-sm: 8px; /* Buttons, popouts */
+  --radius-md: 16px; /* Cards, modals */
+  --radius-lg: 24px; /* Avatars, large UI */
+  /* --- Badges & Status --- */
+  --badge-online: #3ba55d;
+  --badge-idle: #faa81a;
+  --badge-dnd: #ed4245;
+  --badge-offline: #747f8d;
+  /* --- Buttons --- */
+  --button-primary-background: var(--brand-experiment-500);
+  --button-primary-foreground: #fff;
+  --button-secondary-background: #4e5058;
+  --button-secondary-foreground: #fff;
+  /* --- Shadows & Overlays --- */
+  --elevation-low: 0 1px 2px 0 rgb(0 0 0 / 0.07);
+  --elevation-medium: 0 4px 16px 0 rgb(0 0 0 / 0.24);
+  --elevation-high: 0 8px 32px 0 rgb(0 0 0 / 0.32);
+  /* --- Animations --- */
+  --anim-fast: 0.15s cubic-bezier(0.4,0,0.2,1);
+  --anim-medium: 0.25s cubic-bezier(0.4,0,0.2,1);
+  --anim-slow: 0.4s cubic-bezier(0.4,0,0.2,1);
+  /* --- Scrollbars --- */
+  --scrollbar-thin-thumb: #202225;
+  --scrollbar-thin-track: #2b2d31;
+  --scrollbar-thin-thumb-hover: #5865f2;
+}
+/* =============================
+   END DISCORD CUSTOMIZATION VARIABLES
+   ============================= */
+  
+/* =============================
+   EXTENDED CUSTOMIZATION VARIABLES (CHAT, MODALS, BUTTONS, BADGES, ETC.)
+   ============================= */
+:root {
+  /* --- Chat & Message Area --- */
+  --chat-bubble-background: var(--background-secondary); /* Chat bubble background */
+  --chat-bubble-hover: #393c43; /* Chat bubble hover background */
+  --chat-bubble-border-radius: var(--radius-md); /* Chat bubble corner radius */
+  --chat-bubble-shadow: var(--elevation-low); /* Chat bubble shadow */
+  --chat-font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Chat font */
+  --chat-font-size: 16px; /* Chat font size */
+  --chat-mention-background: #5865f2; /* Mention highlight background */
+  --chat-mention-color: #fff; /* Mention highlight text */
+  --chat-timestamp-color: var(--text-muted); /* Timestamp color */
+  /* --- Modals, Popouts, Tooltips --- */
+  --modal-background: var(--background-tertiary); /* Modal background */
+  --modal-border-radius: var(--radius-md); /* Modal corner radius */
+  --modal-shadow: var(--elevation-high); /* Modal shadow */
+  --popout-background: var(--background-floating); /* Popout background */
+  --popout-border-radius: var(--radius-sm); /* Popout corner radius */
+  --tooltip-background: #18191c; /* Tooltip background */
+  --tooltip-color: #fff; /* Tooltip text color */
+  --tooltip-border-radius: var(--radius-xs); /* Tooltip corner radius */
+  /* --- Buttons --- */
+  --button-radius: var(--radius-sm); /* Button corner radius */
+  --button-font-family: var(--chat-font-family); /* Button font */
+  --button-font-size: 15px; /* Button font size */
+  --button-danger-background: #ed4245; /* Danger button background */
+  --button-danger-foreground: #fff; /* Danger button text */
+  --button-success-background: #3ba55d; /* Success button background */
+  --button-success-foreground: #fff; /* Success button text */
+  /* --- Badges & Highlights --- */
+  --badge-radius: 8px; /* Badge corner radius */
+  --badge-font-size: 12px; /* Badge font size */
+  --badge-shadow: var(--elevation-low); /* Badge shadow */
+  --highlight-background: #5865f2; /* Highlighted item background */
+  --highlight-color: #fff; /* Highlighted item text */
+  /* --- Scrollbars --- */
+  --scrollbar-width: 8px; /* Scrollbar width */
+  --scrollbar-radius: 8px; /* Scrollbar corner radius */
+  --scrollbar-thumb: #202225; /* Scrollbar thumb color */
+  --scrollbar-thumb-hover: #5865f2; /* Scrollbar thumb hover color */
+  --scrollbar-track: #2b2d31; /* Scrollbar track color */
+  /* --- Avatars, Server Icons, Images --- */
+  --avatar-radius: var(--radius-lg); /* Avatar corner radius */
+  --avatar-border: 2px solid var(--brand-experiment-500); /* Avatar border */
+  --server-icon-radius: var(--radius-lg); /* Server icon corner radius */
+  --image-radius: var(--radius-md); /* Image corner radius */
+  /* --- Animations & Transitions --- */
+  --transition-fast: var(--anim-fast); /* Fast transition */
+  --transition-medium: var(--anim-medium); /* Medium transition */
+  --transition-slow: var(--anim-slow); /* Slow transition */
+  --animation-ease: cubic-bezier(0.4,0,0.2,1); /* Default animation curve */
+}
+/* =============================
+   END EXTENDED CUSTOMIZATION VARIABLES
+   ============================= */
+  
+/* =============================
+   ADVANCED CUSTOMIZATION VARIABLES (SIDEBAR, HEADER, VOICE, REACTIONS, ETC.)
+   ============================= */
+:root {
+  /* --- Sidebar & Navigation --- */
+  --sidebar-background: var(--background-secondary); /* Main sidebar background */
+  --sidebar-width: 240px; /* Sidebar width */
+  --sidebar-item-radius: var(--radius-sm); /* Sidebar item corner radius */
+  --sidebar-item-hover: #393c43; /* Sidebar item hover background */
+  --sidebar-item-active: var(--brand-experiment-500); /* Active sidebar item */
+  --sidebar-separator: #404249; /* Sidebar separator color */
+  /* --- Header & Title Bar --- */
+  --header-background: var(--background-primary); /* Header background */
+  --header-shadow: var(--elevation-low); /* Header shadow */
+  --header-border: 1px solid #404249; /* Header bottom border */
+  --titlebar-background: var(--background-primary); /* Title bar background */
+  --titlebar-color: var(--text-normal); /* Title bar text color */
+  /* --- Voice & Video --- */
+  --voice-background: var(--background-secondary); /* Voice channel background */
+  --voice-item-background: #2b2d31; /* Voice user background */
+  --voice-item-hover: #393c43; /* Voice user hover background */
+  --voice-item-speaking: #5865f2; /* Speaking user background */
+  --voice-item-muted: #ed4245; /* Muted user background */
+  --voice-item-deafened: #747f8d; /* Deafened user background */
+  --voice-item-streaming: #593695; /* Streaming user background */
+  /* --- Reactions & Emoji --- */
+  --reaction-background: var(--background-secondary); /* Reaction background */
+  --reaction-hover: #393c43; /* Reaction hover background */
+  --reaction-border-radius: var(--radius-sm); /* Reaction corner radius */
+  --reaction-count-color: var(--text-muted); /* Reaction count color */
+  --emoji-size: 22px; /* Default emoji size */
+  --emoji-size-large: 32px; /* Large emoji size */
+  --emoji-size-jumbo: 48px; /* Jumbo emoji size */
+  /* --- Status & Activity --- */
+  --status-online: #3ba55d; /* Online status color */
+  --status-idle: #faa81a; /* Idle status color */
+  --status-dnd: #ed4245; /* Do not disturb status color */
+  --status-offline: #747f8d; /* Offline status color */
+  --status-streaming: #593695; /* Streaming status color */
+  --activity-background: var(--background-secondary); /* Activity background */
+  --activity-color: var(--text-normal); /* Activity text color */
+  /* --- Advanced Effects & Overlays --- */
+  --overlay-background: rgba(0, 0, 0, 0.85); /* Overlay background */
+  --backdrop-blur: blur(10px); /* Backdrop blur effect */
+  --glass-background: rgba(255, 255, 255, 0.1); /* Glass effect background */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2); /* Glass effect border */
+  --gradient-primary: linear-gradient(45deg, var(--brand-experiment-500), var(--brand-experiment-600)); /* Primary gradient */
+  --gradient-secondary: linear-gradient(45deg, #5865f2, #4752c4); /* Secondary gradient */
+  /* --- Accessibility & Advanced --- */
+  --font-scale: 1; /* Font scaling factor (0.8 = 80%, 1.2 = 120%) */
+  --contrast-boost: 1; /* Contrast boost factor */
+  --motion-reduce: 0; /* Reduce motion (0 = normal, 1 = reduced) */
+  --focus-ring: 2px solid var(--brand-experiment-500); /* Focus ring for accessibility */
+  --focus-ring-offset: 2px; /* Focus ring offset */
+  /* --- Custom Effects --- */
+  --glow-color: var(--brand-experiment-500); /* Glow effect color */
+  --glow-intensity: 0.5; /* Glow intensity (0-1) */
+  --shadow-color: rgba(0, 0, 0, 0.3); /* Custom shadow color */
+  --border-accent: var(--brand-experiment-500); /* Accent border color */
+  --border-subtle: #404249; /* Subtle border color */
+}
+/* =============================
+   END ADVANCED CUSTOMIZATION VARIABLES
+   ============================= */
+  
+/* =============================
+   COMPREHENSIVE CUSTOMIZATION VARIABLES (CHANNELS, ROLES, SEARCH, FILES, ETC.)
+   ============================= */
+:root {
+  /* --- Channel Categories & Organization --- */
+  --category-background: var(--background-secondary); /* Category header background */
+  --category-color: var(--text-normal); /* Category text color */
+  --category-hover: #393c43; /* Category hover background */
+  --category-collapsed: var(--text-muted); /* Collapsed category color */
+  --channel-background: transparent; /* Channel item background */
+  --channel-hover: #393c43; /* Channel hover background */
+  --channel-active: var(--brand-experiment-500); /* Active channel background */
+  --channel-unread: #faa81a; /* Unread channel indicator */
+  --channel-mention: #ed4245; /* Mention indicator color */
+  /* --- Roles & Permissions --- */
+  --role-background: var(--background-secondary); /* Role background */
+  --role-color: var(--text-normal); /* Role text color */
+  --role-hover: #393c43; /* Role hover background */
+  --role-admin: #ed4245; /* Admin role color */
+  --role-moderator: #faa81a; /* Moderator role color */
+  --role-member: #3ba55d; /* Member role color */
+  --role-bot: #5865f2; /* Bot role color */
+  /* --- Search & Filters --- */
+  --search-background: var(--background-secondary); /* Search bar background */
+  --search-border: 1px solid #404249; /* Search bar border */
+  --search-focus: var(--brand-experiment-500); /* Search focus color */
+  --search-result-background: var(--background-tertiary); /* Search result background */
+  --search-result-hover: #393c43; /* Search result hover */
+  --filter-background: var(--background-secondary); /* Filter background */
+  --filter-active: var(--brand-experiment-500); /* Active filter color */
+  /* --- File Uploads & Attachments --- */
+  --file-background: var(--background-secondary); /* File background */
+  --file-border: 1px solid #404249; /* File border */
+  --file-hover: #393c43; /* File hover background */
+  --file-progress: var(--brand-experiment-500); /* Upload progress color */
+  --file-error: #ed4245; /* File error color */
+  --file-success: #3ba55d; /* File success color */
+  --attachment-radius: var(--radius-sm); /* Attachment corner radius */
+  /* --- Embeds & Rich Content --- */
+  --embed-background: var(--background-secondary); /* Embed background */
+  --embed-border: 1px solid #404249; /* Embed border */
+  --embed-radius: var(--radius-sm); /* Embed corner radius */
+  --embed-title-color: var(--text-normal); /* Embed title color */
+  --embed-description-color: var(--text-muted); /* Embed description color */
+  --embed-field-background: var(--background-tertiary); /* Embed field background */
+  --embed-author-color: var(--text-link); /* Embed author color */
+  --embed-footer-color: var(--text-muted); /* Embed footer color */
+  /* --- Notifications & Mentions --- */
+  --notification-background: var(--background-floating); /* Notification background */
+  --notification-border: 1px solid #404249; /* Notification border */
+  --notification-radius: var(--radius-sm); /* Notification corner radius */
+  --mention-background: #5865f2; /* Mention background */
+  --mention-color: #fff; /* Mention text color */
+  --mention-radius: var(--radius-xs); /* Mention corner radius */
+  --ping-background: #ed4245; /* Ping background */
+  --ping-color: #fff; /* Ping text color */
+  /* --- Settings & Forms --- */
+  --settings-background: var(--background-primary); /* Settings background */
+  --settings-section-background: var(--background-secondary); /* Settings section background */
+  --settings-item-hover: #393c43; /* Settings item hover */
+  --form-background: var(--background-secondary); /* Form background */
+  --form-border: 1px solid #404249; /* Form border */
+  --form-focus: var(--brand-experiment-500); /* Form focus color */
+  --form-error: #ed4245; /* Form error color */
+  --form-success: #3ba55d; /* Form success color */
+  --checkbox-background: var(--background-secondary); /* Checkbox background */
+  --checkbox-checked: var(--brand-experiment-500); /* Checkbox checked color */
+  --slider-background: var(--background-secondary); /* Slider background */
+  --slider-thumb: var(--brand-experiment-500); /* Slider thumb color */
+  /* --- Mobile & Responsive --- */
+  --mobile-sidebar-width: 280px; /* Mobile sidebar width */
+  --mobile-header-height: 48px; /* Mobile header height */
+  --mobile-touch-target: 44px; /* Mobile touch target size */
+  --mobile-font-scale: 0.9; /* Mobile font scaling */
+  --mobile-radius: var(--radius-sm); /* Mobile corner radius */
+  /* --- Theme Presets & Switching --- */
+  --preset-dark-primary: #313338; /* Dark theme primary background */
+  --preset-dark-secondary: #2b2d31; /* Dark theme secondary background */
+  --preset-light-primary: #ffffff; /* Light theme primary background */
+  --preset-light-secondary: #f2f3f5; /* Light theme secondary background */
+  --preset-accent-blue: #5865f2; /* Blue accent preset */
+  --preset-accent-green: #3ba55d; /* Green accent preset */
+  --preset-accent-purple: #593695; /* Purple accent preset */
+  --preset-accent-red: #ed4245; /* Red accent preset */
+  /* --- Advanced UI Elements --- */
+  --context-menu-background: var(--background-floating); /* Context menu background */
+  --context-menu-hover: #393c43; /* Context menu hover */
+  --dropdown-background: var(--background-floating); /* Dropdown background */
+  --dropdown-hover: #393c43; /* Dropdown hover */
+  --tooltip-background: #18191c; /* Tooltip background */
+  --tooltip-color: #fff; /* Tooltip text color */
+  --loading-spinner: var(--brand-experiment-500); /* Loading spinner color */
+  --progress-bar-background: var(--background-secondary); /* Progress bar background */
+  --progress-bar-fill: var(--brand-experiment-500); /* Progress bar fill */
+}
+/* =============================
+   END COMPREHENSIVE CUSTOMIZATION VARIABLES
+   ============================= */
+  

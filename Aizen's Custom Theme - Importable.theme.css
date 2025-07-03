@@ -1,0 +1,434 @@
+/**
+ * @name Aizen's Custom Theme
+ * @author AizenKai
+ * @version 1.0.0
+ * @description An extremely customizable Discord theme with modular design. 
+ * Import the base theme from GitHub and customize it here!
+ * @source https://github.com/aizenkai1001/discord-themes
+ */
+
+/* =============================
+   IMPORT BASE THEME FROM GITHUB
+   ============================= */
+@import url('https://raw.githubusercontent.com/aizenkai1001/discord-themes/main/Aizen%27s%20Custom%20theme.theme.css');
+
+/* =============================
+   CUSTOMIZATION VARIABLES (EDIT THESE!)
+   ============================= */
+/* 
+   🎨 ULTIMATE CUSTOMIZATION GUIDE 🎨
+   
+   ========================================
+   🚀 QUICK START (Change These First!)
+   ========================================
+   
+   To change your theme color:
+   --kai-accent: #ff6b6b;     ← Change this to any color you want!
+   
+   To change your background:
+   --kai-main-bg: url('your-image-url.jpg');  ← Replace with your image!
+   
+   To change server sidebar width:
+   --kai-server-list-width: 80px;  ← Make it wider or narrower!
+   
+   ========================================
+   🎯 HOW TO CUSTOMIZE
+   ========================================
+   
+   COLORS: Use any of these formats:
+   • Hex: #ff6b6b (red), #4ecdc4 (teal), #45b7d1 (blue)
+   • RGB: rgb(255, 107, 107) or rgba(255, 107, 107, 0.8)
+   • HSL: hsl(0, 100%, 70%) or hsla(0, 100%, 70%, 0.8)
+   
+   SIZES: Use any of these units:
+   • px: 80px (pixels - fixed size)
+   • %: 50% (percentage - relative size)
+   • em: 2em (relative to font size)
+   • rem: 1.5rem (relative to root font size)
+   
+   IMAGES: Replace the URL with your own:
+   • Direct link: url('https://example.com/image.jpg')
+   • Local file: url('file:///path/to/image.png')
+   • Base64: url('data:image/jpeg;base64,/9j/4AAQ...')
+   
+   ========================================
+   🎨 POPULAR COLOR COMBINATIONS
+   ========================================
+   
+   RED THEME:
+   --kai-accent: #ff6b6b;
+   --kai-bg-main: rgb(25, 25, 35);
+   
+   BLUE THEME:
+   --kai-accent: #45b7d1;
+   --kai-bg-main: rgb(20, 30, 40);
+   
+   GREEN THEME:
+   --kai-accent: #96ceb4;
+   --kai-bg-main: rgb(25, 35, 25);
+   
+   PURPLE THEME:
+   --kai-accent: #dda0dd;
+   --kai-bg-main: rgb(35, 25, 40);
+   
+   ========================================
+   🔧 COMMON CUSTOMIZATIONS
+   ========================================
+   
+   • Make everything rounded: Change all --kai-radius-* to 20px
+   • Make everything square: Change all --kai-radius-* to 0px
+   • Darker theme: Change --kai-bg-overlay to rgba(0, 0, 0, 0.5)
+   • Lighter theme: Change --kai-bg-overlay to rgba(255, 255, 255, 0.1)
+   • Larger text: Change --kai-font-size to 120%
+   • Smaller text: Change --kai-font-size to 90%
+   • Faster animations: Change --kai-anim-short to 0.1s
+   • Slower animations: Change --kai-anim-short to 0.5s
+   
+   ========================================
+   💡 PRO TIPS
+   ========================================
+   
+   • Use color picker tools to find perfect colors
+   • Test different opacity values (0.1 to 1.0)
+   • Try different border radius values (0px to 50px)
+   • Use online image hosting for custom backgrounds
+   • Save your favorite settings for future use
+   
+   ========================================
+   🆘 TROUBLESHOOTING
+   ========================================
+   
+   • Theme not loading? Check the GitHub URL is correct
+   • Colors not changing? Make sure you're editing the right file
+   • Background not showing? Check the image URL is valid
+   • Text too small/large? Adjust --kai-font-size
+   • Too much blur? Lower --kai-blur-scale
+   
+   ========================================
+   📝 EXAMPLES
+   ========================================
+   
+   Change to red theme:
+   --kai-accent: #ff6b6b;
+   
+   Change to blue theme:
+   --kai-accent: #45b7d1;
+   
+   Use a different background:
+   --kai-main-bg: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4');
+   
+   Make server sidebar wider:
+   --kai-server-list-width: 150px;
+   
+   Make everything more rounded:
+   --kai-radius-ui: 15px;
+   --kai-radius-avatar: 50%;
+   --kai-radius-server: 30%;
+   
+   Make text larger:
+   --kai-font-size: 120%;
+   
+   ========================================
+   🎯 READY TO CUSTOMIZE? START BELOW! 🎯
+   ========================================
+*/
+:root {
+  /* === 🎨 MAIN COLORS (CHANGE THESE FIRST!) === */
+  --kai-accent: rgb(133, 5, 5); /* 🎯 MAIN THEME COLOR - This is your primary color! Affects buttons, links, highlights, and accent elements throughout Discord. Try: #ff6b6b (red), #4ecdc4 (teal), #45b7d1 (blue), #96ceb4 (green) */
+  --kai-main-bg: url(https://images2.alphacoders.com/275/275112.jpg); /* 🖼️ BACKGROUND IMAGE - The main background image for Discord. Replace with any image URL! Examples: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4') for nature, url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4') for space */
+  --kai-bg-overlay: rgba(0, 0, 0, 0.3); /* 🌫️ BACKGROUND OVERLAY - Makes the background image darker or lighter. 0 = transparent (no overlay), 1 = completely black. Try: rgba(0, 0, 0, 0.5) for darker, rgba(255, 255, 255, 0.1) for lighter */
+  
+  /* === 📱 LAYOUT SIZES === */
+  --kai-server-list-width: 126px; /* 📏 SERVER SIDEBAR WIDTH - How wide the server list (left sidebar) is. Try: 80px (narrow), 150px (wide), 200px (very wide). This affects how much space servers take up */
+  --kai-channels-width: 240px; /* 📏 CHANNEL LIST WIDTH - How wide the channel list (middle sidebar) is. Try: 200px (narrow), 280px (wide), 320px (very wide). This affects how much space channels take up */
+  --kai-members-width: 240px; /* 📏 MEMBER LIST WIDTH - How wide the member list (right sidebar) is. Try: 200px (narrow), 280px (wide), 320px (very wide). This affects how much space member names take up */
+  --kai-spacing-ui: 10px; /* 📏 UI SPACING - Space between UI elements like buttons, cards, and sections. Try: 5px (tight), 15px (loose), 20px (very loose). This affects the overall layout density */
+  
+  /* === 🏠 CUSTOM HOME ICON === */
+  --kai-home-icon: url(https://i.pinimg.com/736x/20/5f/3d/205f3d8b45b2eb2a355d1fd3e3c7738e.jpg); /* 🏠 CUSTOM HOME BUTTON - Replace the Discord home icon with your own image! Use any image URL. Examples: url('https://i.imgur.com/your-icon.png'), url('https://example.com/icon.jpg'). Make sure the image is square for best results */
+  --kai-home-icon-zoom: 100%; /* 🔍 HOME ICON SIZE - How big your custom home icon is. 100% = normal size, 150% = 50% larger, 80% = 20% smaller. Try different values to fit your icon perfectly */
+  --kai-home-icon-position: center center; /* 📍 HOME ICON POSITION - Where your custom home icon is positioned. Options: center center, top left, bottom right, etc. center center is usually best */
+  
+  /* === 💬 MESSAGE BOX === */
+  --kai-message-box-bg: rgba(56, 0, 0, 0.705); /* 💬 MESSAGE INPUT BOX - The background color of the area where you type messages. Try: rgba(0, 0, 0, 0.5) for dark, rgba(255, 255, 255, 0.1) for light, or any color you prefer */
+  
+  /* === 🔘 BUTTONS & UI === */
+  --kai-radius-ui: 10px; /* 🔘 CORNER ROUNDNESS - How rounded the corners are on buttons, cards, popups, and other UI elements. 0px = square corners, 20px = very rounded, 50px = pill-shaped. Try different values to match your style */
+  --kai-radius-avatar: 50%; /* 👤 AVATAR ROUNDNESS - How rounded user avatars are. 50% = perfect circle, 0% = square, 25% = slightly rounded. Most people prefer 50% for circles or 0% for squares */
+  --kai-radius-server: 20%; /* 🏠 SERVER ICON ROUNDNESS - How rounded server icons are. 20% = slightly rounded, 50% = circle, 0% = square. Try different values to match your avatar style */
+  
+  /* === 📝 TEXT COLORS === */
+  --kai-text-header: rgb(255, 255, 255); /* 📝 HEADER TEXT - Color of main headers, titles, and important text. Usually white or very light. Try: rgb(255, 255, 255) for white, rgb(240, 240, 240) for light gray */
+  --kai-text-normal: rgb(220, 221, 222); /* 📝 NORMAL TEXT - Color of regular text in messages and UI. Usually light gray. Try: rgb(220, 221, 222) for light gray, rgb(200, 200, 200) for darker gray */
+  --kai-text-muted: rgb(185, 187, 190); /* 📝 MUTED TEXT - Color of less important text like timestamps, status messages, and secondary info. Usually darker gray. Try: rgb(185, 187, 190) for muted gray, rgb(150, 150, 150) for darker */
+  --kai-text-link: rgb(0, 132, 255); /* 🔗 LINK TEXT - Color of clickable links and URLs. Usually blue. Try: rgb(0, 132, 255) for blue, rgb(88, 101, 242) for Discord blue, or match your accent color */
+  
+  /* === 🎨 BACKGROUND COLORS === */
+  --kai-bg-main: rgb(32, 34, 37); /* 🎨 MAIN BACKGROUND - The primary background color for the main Discord interface. Usually dark. Try: rgb(32, 34, 37) for dark gray, rgb(25, 25, 35) for darker, rgb(45, 45, 55) for lighter */
+  --kai-bg-secondary: rgb(47, 49, 54); /* 🎨 SIDEBAR BACKGROUND - Background color for sidebars and secondary areas. Usually slightly lighter than main. Try: rgb(47, 49, 54) for medium gray, rgb(40, 42, 47) for darker */
+  --kai-bg-tertiary: rgb(64, 68, 75); /* 🎨 POPUP BACKGROUND - Background color for popups, modals, and elevated elements. Usually lighter than secondary. Try: rgb(64, 68, 75) for light gray, rgb(55, 59, 66) for darker */
+  --kai-bg-elevated: rgb(54, 57, 63); /* 🎨 MODAL BACKGROUND - Background color for modals and floating elements. Usually between secondary and tertiary. Try: rgb(54, 57, 63) for balanced gray */
+  
+  /* === 🔔 MENTIONS & NOTIFICATIONS === */
+  --kai-mention-color: rgba(250, 166, 26, 0.05); /* 🔔 MENTION HIGHLIGHT - Background color when someone mentions you in messages. Very subtle highlight. Try: rgba(250, 166, 26, 0.05) for yellow, rgba(88, 101, 242, 0.1) for blue, rgba(237, 66, 69, 0.1) for red */
+  --kai-mention-sider: rgba(250, 166, 26, 1); /* 🔔 SIDEBAR MENTION - Color of mention indicators in the sidebar. Usually bright and noticeable. Try: rgba(250, 166, 26, 1) for bright yellow, rgba(88, 101, 242, 1) for bright blue */
+  --kai-category-hover-color: rgb(60, 202, 138); /* 🔔 CATEGORY HOVER - Color when hovering over server categories. Usually a bright accent color. Try: rgb(60, 202, 138) for green, rgb(88, 101, 242) for blue, or match your accent color */
+  
+  /* === ⚡ ANIMATIONS === */
+  --kai-unread-server-animation: none; /* ⚡ UNREAD ANIMATION - Animation for servers with unread messages. Options: rainbow (colorful animation), none (no animation). Try: rainbow for fun, none for clean look */
+  --kai-anim-short: 0.2s; /* ⚡ FAST ANIMATIONS - Speed of quick animations like hover effects. 0.1s = very fast, 0.5s = slow. Try: 0.1s for snappy, 0.3s for smooth, 0.5s for relaxed */
+  --kai-anim-long: 0.5s; /* ⚡ SLOW ANIMATIONS - Speed of longer animations like transitions. 0.3s = fast, 1s = slow. Try: 0.3s for quick, 0.7s for smooth, 1s for dramatic */
+  --kai-blur-scale: 100; /* ⚡ BLUR INTENSITY - How strong blur effects are throughout Discord. 0 = no blur, 100 = normal blur, 150 = heavy blur. Try: 50 for subtle, 100 for normal, 150 for dramatic */
+  
+  /* === 📜 SCROLLBARS === */
+  --kai-scrollbar-color: rgba(245, 243, 243, 0.2); /* 📜 SCROLLBAR COLOR - Color of scrollbars throughout Discord. Usually semi-transparent. Try: rgba(245, 243, 243, 0.2) for light, rgba(0, 0, 0, 0.3) for dark, or match your theme */
+  
+  /* === 🎭 STATUS COLORS === */
+  --kai-status-online: rgb(87, 242, 135); /* 🟢 ONLINE STATUS - Color for online status indicator (green dot). Usually bright green. Try: rgb(87, 242, 135) for bright green, rgb(59, 165, 92) for darker green */
+  --kai-status-idle: rgb(250, 166, 26); /* 🟡 IDLE STATUS - Color for idle status indicator (yellow dot). Usually bright yellow/orange. Try: rgb(250, 166, 26) for bright yellow, rgb(255, 185, 77) for lighter yellow */
+  --kai-status-dnd: rgb(237, 66, 69); /* 🔴 DO NOT DISTURB - Color for DND status indicator (red dot). Usually bright red. Try: rgb(237, 66, 69) for bright red, rgb(220, 60, 60) for darker red */
+  --kai-status-offline: rgb(116, 127, 141); /* ⚫ OFFLINE STATUS - Color for offline status indicator (gray dot). Usually gray. Try: rgb(116, 127, 141) for gray, rgb(100, 110, 120) for darker gray */
+  
+  
+  /* 🔧 ADVANCED SETTINGS (DON'T CHANGE UNLESS YOU KNOW WHAT YOU'RE DOING) */
+  --kai-font-ui: 'Poppins'; /* 🔤 UI FONT - Font for buttons, menus, and interface elements */
+  --kai-font-body: 'Roboto'; /* 🔤 MESSAGE FONT - Font for messages and general text. Should be easy to read. Examples: 'Roboto', 'Open Sans', 'Segoe UI', 'Arial'. Choose a clean, readable font */
+  --kai-font-header: 'Righteous'; /* 🔤 HEADER FONT - Font for titles, usernames, and headers. Can be more stylized. Examples: 'Righteous', 'Bebas Neue', 'Oswald', 'Impact'. Choose a bold, distinctive font */
+  --kai-font-size: 100%; /* 📏 FONT SIZE - Overall text size multiplier. 100% = normal size, 120% = 20% larger, 90% = 10% smaller. Try: 90% for compact, 110% for easier reading, 120% for large text */
+  --kai-icon-avatar-chat: 64px; /* 👤 CHAT AVATAR SIZE - Size of avatars in chat messages. 48px = small, 64px = normal, 80px = large. Try: 48px for compact, 80px for prominent, 96px for very large */
+  --kai-icon-avatar-list: 32px; /* 👤 LIST AVATAR SIZE - Size of avatars in member lists and sidebars. 24px = small, 32px = normal, 40px = large. Try: 24px for compact lists, 40px for easier recognition */
+  --kai-icon-avatar-profile: 80px; /* 👤 PROFILE AVATAR SIZE - Size of avatars in user profiles and modals. 64px = normal, 80px = large, 96px = very large. Try: 80px for good visibility, 96px for prominent display */
+  --kai-button-primary: rgb(88, 101, 242); /* 🔘 PRIMARY BUTTON - Color of main action buttons like "Send Message", "Join Server". Usually bright and prominent. Try: rgb(88, 101, 242) for Discord blue, rgb(59, 130, 246) for blue, or match your accent */
+  --kai-button-primary-hover: rgb(71, 82, 196); /* 🔘 PRIMARY BUTTON HOVER - Color when hovering over primary buttons. Usually darker version of primary. Try: rgb(71, 82, 196) for darker blue, or 20% darker than your primary color */
+  --kai-button-secondary: rgb(79, 84, 92); /* 🔘 SECONDARY BUTTON - Color of secondary buttons like "Cancel", "Back". Usually gray or muted. Try: rgb(79, 84, 92) for gray, rgb(100, 100, 100) for darker gray */
+  --kai-button-danger: rgb(237, 66, 69); /* 🔘 DANGER BUTTON - Color of destructive action buttons like "Delete", "Leave Server". Usually red. Try: rgb(237, 66, 69) for red, rgb(220, 60, 60) for darker red, rgb(255, 80, 80) for brighter red */
+  --kai-border-primary: rgb(64, 68, 75); /* 🔲 PRIMARY BORDER - Color of main borders and dividers. Usually gray. Try: rgb(64, 68, 75) for gray, rgb(80, 80, 80) for darker, rgb(50, 50, 50) for lighter */
+  --kai-input-bg: rgb(64, 68, 75); /* 📝 INPUT BACKGROUND - Background color of text inputs and textareas. Usually darker than surrounding elements. Try: rgb(64, 68, 75) for gray, rgb(50, 54, 61) for darker, rgb(80, 84, 91) for lighter */
+  --kai-input-border: rgb(79, 84, 92); /* 📝 INPUT BORDER - Border color of text inputs. Usually slightly lighter than input background. Try: rgb(79, 84, 92) for gray, rgb(100, 104, 112) for lighter, rgb(60, 64, 71) for darker */
+  --kai-shadow-primary: 0 2px 10px rgba(0, 0, 0, 0.2); /* 🌑 MAIN SHADOW - Shadow for elevated elements like cards and modals. Format: x-offset y-offset blur-radius color. Try: 0 2px 10px rgba(0, 0, 0, 0.2) for subtle, 0 4px 20px rgba(0, 0, 0, 0.3) for prominent */
+  --kai-hover-opacity: 0.8; /* 🌫️ HOVER TRANSPARENCY - How transparent elements become when hovering. 1.0 = no change, 0.8 = 20% transparent, 0.5 = 50% transparent. Try: 0.9 for subtle, 0.7 for noticeable, 0.5 for dramatic */
+  --kai-overlay-opacity: 0.7; /* 🌫️ OVERLAY TRANSPARENCY - How transparent overlays and backdrops are. 0 = invisible, 1 = completely opaque. Try: 0.5 for subtle, 0.8 for prominent, 0.9 for very dark */
+  
+  /* === 🔗 BASE THEME COMPATIBILITY (DON'T CHANGE THESE) === */
+  /* These automatically sync with your custom colors above */
+  --kai-accent-ui: var(--kai-accent);
+  --kai-bgc-server-button-hover: rgba(255, 255, 255, 0.1);
+  --kai-bgc-button-hover: rgba(255, 255, 255, 0.1);
+  --kai-bg-1: var(--kai-bg-main);
+  --kai-bg-2: var(--kai-bg-secondary);
+  --kai-bg-3: var(--kai-bg-tertiary);
+  --kai-bg-4: var(--kai-bg-elevated);
+  
+  /* === DISCORD NATIVE VARIABLES (MAPPED TO KAI VARIABLES) === */
+  --brand-experiment: var(--kai-accent); /* Main Discord blurple color - mapped to your accent color */
+  --brand-experiment-500: var(--kai-accent); /* Default brand color variant - mapped to your accent color */
+  --background-primary: var(--kai-bg-main); /* Main application background - mapped to your main background */
+  --background-secondary: var(--kai-bg-secondary); /* Secondary background - mapped to your secondary background */
+  --background-tertiary: var(--kai-bg-tertiary); /* Tertiary background - mapped to your tertiary background */
+  --background-floating: var(--kai-bg-elevated); /* Floating background - mapped to your elevated background */
+  --text-normal: var(--kai-text-normal); /* Normal text color - mapped to your normal text color */
+  --text-muted: var(--kai-text-muted); /* Muted text color - mapped to your muted text color */
+  --text-link: var(--kai-text-link); /* Link text color - mapped to your link text color */
+  --panels-background: var(--background-secondary); /* Bottom panels background - controls the color of the user area panel at the bottom of Discord */
+  --message-box-background: var(--kai-message-box-bg); /* Message input box background - controls the color of the text input area where you type messages */
+  
+  /* === CHAT & MESSAGE CUSTOMIZATION === */
+  --chat-bubble-background: var(--background-secondary); /* Chat bubble background - background color of message bubbles in chat */
+  --chat-bubble-hover: #393c43; /* Chat bubble hover - background color when hovering over message bubbles */
+  --chat-bubble-border-radius: 8px; /* Chat bubble radius - controls how rounded message bubbles are */
+  
+  /* === BUTTON CUSTOMIZATION === */
+  --button-radius: 6px; /* Button corner radius - controls how rounded all buttons are throughout Discord */
+  --button-font-weight: 500; /* Button font weight - controls how bold button text appears (400=normal, 500=medium, 600=semibold, 700=bold) */
+  
+  /* === MODAL & POPUP CUSTOMIZATION === */
+  --modal-background: var(--background-tertiary); /* Modal background - background color of popup windows and dialogs */
+  --modal-border-radius: 8px; /* Modal corner radius - controls how rounded modal windows are */
+  --modal-shadow: 0 8px 16px rgba(0, 0, 0, 0.24); /* Modal shadow - shadow effect for modal windows (format: x-offset y-offset blur-radius color) */
+  
+  /* === BADGE & INDICATOR CUSTOMIZATION === */
+  --badge-radius: 10px; /* Badge corner radius - controls how rounded badges and indicators are */
+  --badge-font-size: 11px; /* Badge font size - controls the text size of badges and indicators */
+  
+  /* === SCROLLBAR CUSTOMIZATION === */
+  --scrollbar-width: 8px; /* Scrollbar width - controls how thick scrollbars are */
+  --scrollbar-thumb: #4f545c; /* Scrollbar thumb color - color of the draggable part of scrollbars */
+  --scrollbar-track: transparent; /* Scrollbar track color - color of the scrollbar track (background) */
+  
+  /* === AVATAR & ICON CUSTOMIZATION === */
+  --avatar-radius: 50%; /* Avatar corner radius - controls how rounded user avatars are (50% = circle, 0% = square) */
+  --server-icon-radius: 16px; /* Server icon corner radius - controls how rounded server icons are */
+  
+  /* === STATUS INDICATOR COLORS === */
+  --status-online: #3ba55c; /* Online status color - green dot for online users */
+  --status-idle: #faa61a; /* Idle status color - yellow/orange dot for idle users */
+  --status-dnd: #ed4245; /* Do not disturb status color - red dot for DND users */
+  --status-offline: #747f8d; /* Offline status color - gray dot for offline users */
+  --status-streaming: #593695; /* Streaming status color - purple dot for streaming users */
+  
+  /* === VOICE CHANNEL INDICATORS === */
+  --voice-speaking: #3ba55c; /* Speaking indicator color - green ring around avatar when user is speaking */
+  --voice-muted: #747f8d; /* Muted indicator color - gray overlay when user is muted */
+  --voice-deafened: #ed4245; /* Deafened indicator color - red overlay when user is deafened */
+  
+  /* === REACTION CUSTOMIZATION === */
+  --reaction-background: rgba(255, 255, 255, 0.1); /* Reaction background - background color of emoji reactions */
+  --reaction-hover: rgba(255, 255, 255, 0.2); /* Reaction hover - background color when hovering over reactions */
+  
+  /* === MENTION CUSTOMIZATION === */
+  --mention-background: rgba(88, 101, 242, 0.3); /* Mention background - background color when someone mentions you */
+  --mention-color: #00b0f4; /* Mention text color - color of mention text in messages */
+  
+  /* === CHANNEL INDICATORS === */
+  --channel-unread: #dcddde; /* Unread channel color - color of unread channel indicators */
+  --channel-mention: #faa61a; /* Channel mention color - color when a channel has mentions */
+  
+  /* === SIDEBAR CUSTOMIZATION === */
+  --sidebar-background: var(--background-secondary); /* Sidebar background - background color of channel/member sidebars */
+  --sidebar-width: 240px; /* Sidebar width - controls how wide sidebars are */
+  --sidebar-item-radius: 4px; /* Sidebar item radius - controls how rounded sidebar items are */
+  --sidebar-item-hover: #393c43; /* Sidebar item hover - background color when hovering over sidebar items */
+  
+  /* === HEADER CUSTOMIZATION === */
+  --header-background: var(--background-secondary); /* Header background - background color of channel headers */
+  --header-shadow: 0 1px 0 rgba(4, 4, 5, 0.2); /* Header shadow - shadow effect for headers (format: x-offset y-offset blur-radius color) */
+  
+  /* === OVERLAY & EFFECTS === */
+  --overlay-background: rgba(0, 0, 0, 0.8); /* Overlay background - background color of overlays and backdrops */
+  --backdrop-blur: 10px; /* Backdrop blur amount - controls how much blur effect is applied to backgrounds */
+  
+  /* === ANIMATION CUSTOMIZATION === */
+  --animation-speed: 0.2s; /* Animation speed - controls how fast all animations are (0.1s = fast, 0.5s = slow) */
+  --animation-curve: cubic-bezier(0.4, 0, 0.2, 1); /* Animation curve - controls the easing of animations (linear, ease, ease-in, ease-out, etc.) */
+  
+  /* === EFFECT INTENSITY === */
+  --glow-intensity: 0.5; /* Glow effect intensity - controls how strong glow effects are (0 = none, 1 = maximum) */
+  --shadow-intensity: 0.1; /* Shadow intensity - controls how strong shadow effects are (0 = none, 1 = maximum) */
+  
+  /* === FONT CUSTOMIZATION === */
+  --font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font family - controls which fonts are used throughout Discord */
+  --font-size-base: 14px; /* Base font size - controls the base text size throughout Discord */
+  --font-weight-normal: 400; /* Normal font weight - weight for regular text (400 = normal) */
+  --font-weight-medium: 500; /* Medium font weight - weight for medium text (500 = medium) */
+  --font-weight-semibold: 600; /* Semibold font weight - weight for semibold text (600 = semibold) */
+  --font-weight-bold: 700; /* Bold font weight - weight for bold text (700 = bold) */
+}
+
+/* =============================
+   DARK THEME OVERRIDES
+   ============================= */
+.theme-dark {
+  /* Override any dark theme specific variables here */
+  --background-primary: #313338;
+  --background-secondary: #2b2d31;
+  --background-tertiary: #232428;
+  --background-floating: #18191c;
+}
+
+/* =============================
+   LIGHT THEME OVERRIDES
+   ============================= */
+.theme-light {
+  /* Override any light theme specific variables here */
+  --background-primary: #ffffff;
+  --background-secondary: #f2f3f5;
+  --background-tertiary: #e3e5e8;
+  --background-floating: #ffffff;
+  --text-normal: #2e3338;
+  --text-muted: #747f8d;
+}
+
+/* =============================
+   CUSTOM ANIMATIONS
+   ============================= */
+@keyframes rainbow {
+  0% { border-color: #ff0000; }
+  16.666% { border-color: #ff8000; }
+  33.333% { border-color: #ffff00; }
+  50% { border-color: #00ff00; }
+  66.666% { border-color: #0080ff; }
+  83.333% { border-color: #8000ff; }
+  100% { border-color: #ff0000; }
+}
+
+/* =============================
+   QUICK CUSTOMIZATION EXAMPLES
+   ============================= */
+
+/* === RED THEME EXAMPLE === */
+/* Uncomment the section below to apply a red theme */
+/*
+:root {
+  --brand-experiment: #ff4444;
+  --brand-experiment-500: #ff4444;
+  --kai-accent: #ff4444;
+  --kai-accent-ui: #ff4444;
+  --status-online: #ff4444;
+  --mention-background: rgba(255, 68, 68, 0.3);
+  --mention-color: #ff4444;
+}
+*/
+
+/* === DARKER THEME EXAMPLE === */
+/* Uncomment the section below to apply a darker theme */
+/*
+:root {
+  --background-primary: #1a1a2e;
+  --background-secondary: #16213e;
+  --background-tertiary: #0f3460;
+  --background-floating: #0a0a1a;
+  --kai-bg-1: #1a1a2e;
+  --kai-bg-2: #16213e;
+  --kai-bg-3: #0f3460;
+  --kai-bg-4: #0a0a1a;
+}
+*/
+
+/* === MINIMAL THEME EXAMPLE === */
+/* Uncomment the section below to apply a minimal theme */
+/*
+:root {
+  --button-radius: 0px;
+  --modal-border-radius: 0px;
+  --badge-radius: 0px;
+  --avatar-radius: 0px;
+  --server-icon-radius: 0px;
+  --chat-bubble-border-radius: 0px;
+  --sidebar-item-radius: 0px;
+}
+*/
+
+/* =============================
+   NOTES & INSTRUCTIONS
+   ============================= */
+/*
+HOW TO USE THIS THEME:
+
+1. REPLACE THE GITHUB URL:
+   Change 'yourusername' in the @import url to your actual GitHub username
+   and make sure the base theme file is uploaded to your repository.
+
+2. CUSTOMIZE COLORS:
+   Edit the variables in the :root section above to change colors, sizes, etc.
+
+3. APPLY PRESETS:
+   Uncomment one of the example themes (red, darker, minimal) to quickly apply a preset.
+
+4. SHARE YOUR THEME:
+   Upload this file to your GitHub repository and share the raw URL with others.
+
+5. UPDATE THE BASE:
+   When the base theme is updated, just change the version number in the @import url.
+
+COMMON CUSTOMIZATIONS:
+- Change --brand-experiment for your main accent color
+- Adjust --background-primary through --background-floating for different backgrounds
+- Modify --kai-* variables for specific UI elements
+- Change radius variables for rounded vs sharp corners
+- Adjust --animation-speed for faster/slower animations
+
+TROUBLESHOOTING:
+- If the theme doesn't load, check the GitHub URL is correct
+- If colors aren't changing, make sure you're editing the right variables
+- If something looks broken, try refreshing Discord or restarting Vencord
+*/ 
